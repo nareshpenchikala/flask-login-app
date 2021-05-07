@@ -33,7 +33,7 @@
         min-height: 100%;
     }
      /* Second image (Portfolio) */
-.bgimg-2 { background-image: url({{url_for("static",filename="img/hector.jpg") }});
+    .bgimg-2 { background-image: url({{url_for("static",filename="img/mghector.jpg") }});
         min-height: 400px;
     }
 
@@ -101,7 +101,7 @@
     <!-- First Parallax Image with Logo Text -->
     <div class="bgimg-1 w3-display-container w3-opacity-mix" id="SALES ENQUIRY">
         <div class="w3-display-middle" style="white-space:nowrap;">
-            <span class="w3-center w3-padding-small w3-black w3-xxxlarge w3-wide w3-animate-opacity">SALES ENQUIRY</span>
+            <span class="w3-center w3-padding-small w3-black w3-xxlarge w3-wide w3-animate-opacity">SALES ENQUIRY</span>
         </div>
     </div>
 
@@ -111,7 +111,7 @@
 
 
     <!-- Container (About Section) -->
-    <div class="w3-content w3-container w3-padding-74" id="MG HECTOR">
+    <div class="w3-content w3-container w3-padding-64" id="MG HECTOR">
         <h3 class="w3-center">MG HECTOR</h3>
         <p></p>
         <div class="w3-row">
@@ -127,10 +127,15 @@
                             <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
                         </div>
                         <div>
-                            <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter Proper 10 digit mobile number!" pattern="[1-9]{1}[0-9]{9}" required name="Mobile Number">
+                            <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" required name="Mobile Number">
                         <div>
                      </div>
                     <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
+                    <a href="https://www.mgmotor.co.in/vehicles/mghector">
+                          <button class="w3-button w3-black w3-left w3-section">
+                                  MG Hector Specifications
+                          </button>
+                     </a>
                     <button class="w3-button w3-black w3-right w3-section" onclick="thanks()" type="submit">
                         <i class="fa fa-paper-plane"></i> Submit Enquiry
                     </button>
