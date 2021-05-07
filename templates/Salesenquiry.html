@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+    <meta name="google-site-verification" content="lYwW2uznu_Reu64AyWt3XU3F4RsfvAKn0ZQVP_UO7BQ" />
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{url_for("static",filename="content/w3.css")}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{url_for("static",filename="content/lato.css")}}">
+<style>
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Lato", sans-serif;
+    }
+
+    body, html {
+        height: 100%;
+        color: #777;
+        line-height: 1.8;
+    }
+
+    /* Create a Parallax Effect */
+    .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    /* First image (Logo. Full height) */
+    .bgimg-1 {
+        background-image: url({{url_for("static",filename="img/qa.jpg")}});
+        min-height: 100%;
+    }
+     /* Second image (Portfolio) */
+.bgimg-2 { background-image: url({{url_for("static",filename="img/hector.jpg") }});
+        min-height: 400px;
+    }
+
+    /* Third image (Contact) */
+    .bgimg-3 {
+        background-image: url({{url_for("static",filename="img/MG-Hector-Plus.jpg")}});
+        min-height: 400px;
+    }
+
+    /* fourth image (Portfolio) */
+    .bgimg-4 {
+        background-image: url({{url_for("static",filename="img/mg-zs-ev.jpg")}});
+        min-height: 400px;
+    }
+
+     .bgimg-5 {
+        background-image: url({{url_for("static",filename="img/MG-Gloster-front-side.jpg")}});
+        min-height: 400px;
+    }
+
+
+    .w3-wide {
+        letter-spacing: 10px;
+    }
+
+    .w3-hover-opacity {
+        cursor: pointer;
+    }
+
+    /* Turn off parallax scrolling for tablets and phones */
+    @media only screen and (max-device-width: 1600px) {
+        .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+            background-attachment: scroll;
+            min-height: 400px;
+        }
+    }
+</style>
+<body>
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar" id="myNavbar">
+            <a class="w3-bar-item w3-button w3-hover-white w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a href="#SALES ENQUIRY" class="w3-bar-item w3-button">SALES ENQUIRY</a>
+            <a href="#MG HECTOR" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-car"></i> MG HECTOR</a>
+            <a href="#MG HECTOR PLUS" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-car"></i>MG HECTOR PLUS</a>
+            <a href="#MG ZS-EV" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-car"></i> MG ZS-EV</a>
+            <a href="#MG GLOSTER" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-car"></i>MG GLOSTER</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+                <i class="fa fa-search"></i>
+            </a>
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+            <a href="#MG HECTOR" class="w3-bar-item w3-button" onclick="toggleFunction()">MG HECTOR</a>
+            <a href="#MG HECTOR PLUS" class="w3-bar-item w3-button" onclick="toggleFunction()">MG HECTOR PLUS</a>
+            <a href="#MG ZS-EV" class="w3-bar-item w3-button" onclick="toggleFunction()">MG ZS-EV</a>
+            <a href="#MG GLOSTER" class="w3-bar-item w3-button" onclick="toggleFunction()">MG GLOSTER</a>
+            <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+        </div>
+    </div>
+    <!-- First Parallax Image with Logo Text -->
+    <div class="bgimg-1 w3-display-container w3-opacity-mix" id="SALES ENQUIRY">
+        <div class="w3-display-middle" style="white-space:nowrap;">
+            <span class="w3-center w3-padding-small w3-black w3-xxxlarge w3-wide w3-animate-opacity">SALES ENQUIRY</span>
+        </div>
+    </div>
+
+    <div class="bgimg-2 w3-display-container w3-opacity-mix" id="MG HECTOR">
+        <div class="w3-display-middle" style="white-space:nowrap;">
+            <span class="w3-center w3-padding-small w3-black w3-xxxlarge w3-wide w3-animate-opacity">MG HECTOR</span>
+        </div>
+    </div>
+
+
+
+    <!-- Container (About Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="MG HECTOR">
+        <h3 class="w3-center">MG HECTOR</h3>
+        <p></p>
+        <div class="w3-row">
+            <div class="w3-col m6 w3-center w3-padding-large">
+                <p><b><i class="fa fa-car w3-margin-right"></i>MG HECTOR</b></p><br>
+                <img src={{url_for("static",filename="img/hector.jpg")}} class="w3-image" alt="Photo of Mg hector" width="150" height="150">
+            </div>
+            <!-- Hide this text on small devices -->
+            <div class="w3-col m6  w3-padding-large">
+                <form method="POST" name="google-sheet">
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                        </div>
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                        </div>
+                    </div>
+                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter Proper 10 digit mobile number!" pattern="[1-9]{1}[0-9]{9}" required name="Mobile Number">
+                    <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
+                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks()" type="submit">
+                        <i class="fa fa-paper-plane"></i> Submit Enquiry
+                    </button>
+                    <p id="greet"></p>
+                </form>
+                <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+                <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+                <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bgimg-3 w3-display-container w3-opacity-mix" id="MG HECTOR PLUS">
+        <div class="w3-display-middle" style="white-space:nowrap;">
+            <span class="w3-center w3-padding-small w3-black w3-xxxlarge w3-wide w3-animate-opacity">MG HECTOR PLUS </span>
+        </div>
+    </div>
+
+    <!-- Container (About Section2) -->
+    <div class="w3-content w3-container w3-padding-64" id="MG HECTOR PLUS">
+        <h3 class="w3-center">MG HECTOR PLUS</h3>
+        <p></p>
+        <div class="w3-row">
+            <div class="w3-col m6 w3-center w3-padding-large">
+                <p><b><i class="fa fa-car w3-margin-right"></i>MG HECTOR PLUS</b></p><br>
+                <img src={{url_for("static",filename="img/MG-Hector-Plus.jpg")}} class="w3-image" alt="Photo of Mg hector plus" width="150" height="150">
+            </div>
+            <!-- Hide this text on small devices -->
+            <div class="w3-col m6  w3-padding-large">
+                <form method="POST" name="google-sheet">
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                        </div>
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                        </div>
+                    </div>
+                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter Proper 10 digit mobile number!" pattern="[1-9]{1}[0-9]{9}" required name="Mobile Number">
+                    <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
+                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks()" type="submit">
+                        <i class="fa fa-paper-plane"></i> Submit Enquiry
+                    </button>
+                    <p id="greet"></p>
+                </form>
+                <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+                <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+                <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+            </div>
+        </div>
+    </div>
+
+    <div class="bgimg-4 w3-display-container w3-opacity-mix" id="MG ZS-EV">
+        <div class="w3-display-middle" style="white-space:nowrap;">
+            <span class="w3-center w3-padding-small w3-black w3-xxxlarge w3-wide w3-animate-opacity">MG ZS-EV </span>
+        </div>
+    </div>
+
+    <!-- Container (About Section3) -->
+    <div class="w3-content w3-container w3-padding-64" id="MG ZS-EV">
+        <h3 class="w3-center">MG ZS-EV</h3>
+        <p></p>
+        <div class="w3-row">
+            <div class="w3-col m6 w3-center w3-padding-large">
+                <p><b><i class="fa fa-car w3-margin-right"></i>MG ZS-EV</b></p><br>
+                <img src={{url_for("static",filename="img/mg-zs-ev.jpg")}} class="w3-image" alt="Photo of Mg zs-ev" width="150" height="150">
+            </div>
+            <!-- Hide this text on small devices -->
+            <div class="w3-col m6  w3-padding-large">
+                <form method="POST" name="google-sheet">
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                        </div>
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                        </div>
+                    </div>
+                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter Proper 10 digit mobile number!" pattern="[1-9]{1}[0-9]{9}" required name="Mobile Number">
+                    <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
+                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks()" type="submit">
+                        <i class="fa fa-paper-plane"></i> Submit Enquiry
+                    </button>
+                    <p id="greet"></p>
+                </form>
+                <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+                <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+                <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+            </div>
+        </div>
+    </div>
+
+    <div class="bgimg-5 w3-display-container w3-opacity-mix" id="MG GLOSTER">
+        <div class="w3-display-middle" style="white-space:nowrap;">
+            <span class="w3-center w3-padding-small w3-black w3-xxxlarge w3-wide w3-animate-opacity">MG GLOSTER</span>
+        </div>
+    </div>
+
+    <!-- Container (About Section4) -->
+    <div class="w3-content w3-container w3-padding-64" id="MG GLOSTER">
+        <h3 class="w3-center">MG GLOSTER</h3>
+        <p></p>
+        <div class="w3-row">
+            <div class="w3-col m6 w3-center w3-padding-large">
+                <p><b><i class="fa fa-car w3-margin-right"></i>MG GLOSTER</b></p><br>
+                <img src={{url_for("static",filename="img/MG-Gloster-front-side.jpg")}} class="w3-image" alt="Photo of Mg gloster" width="150" height="150">
+            </div>
+            <!-- Hide this text on small devices -->
+            <div class="w3-col m6  w3-padding-large">
+                <form method="POST" name="google-sheet">
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                        </div>
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                        </div>
+                    </div>
+                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter Proper 10 digit mobile number!" pattern="[1-9]{1}[0-9]{9}" required name="Mobile Number">
+                    <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
+                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks()" type="submit">
+                        <i class="fa fa-paper-plane"></i> Submit Enquiry
+                    </button>
+                    <p id="greet"></p>
+                </form>
+                <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+                <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+                <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+        <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+        <div class="w3-xlarge w3-section">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+    </footer>
+    <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxIp-GddixHTALQxm2xjbERMCy8iOXrUB0RRQzkMjNXaplbZvQ/exec'
+            const form = document.forms['google-sheet']
+
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for the Feedback."))
+                .catch(error => console.error('Error!', error.message))
+            })
+    </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+function thanks(){
+     var greeting;
+     greeting="Thank you for your interest.Will get back to you....";
+     document.getElementById("greet").innerHTML=greeting;
+}
+
+    </script>
+
+</body>
+</html>
+
+
