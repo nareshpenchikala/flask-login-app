@@ -80,8 +80,8 @@
                 <i class="fa fa-bars"></i>
             </a>
             <a href="#SALES ENQUIRY" class="w3-bar-item w3-button">SALES ENQUIRY</a>
-            <a href="#MG HECTOR" class="w3-bar-item w3-button w3-hide-small"> MG HECTOR</a>
-            <a href="#MG HECTOR PLUS" class="w3-bar-item w3-button w3-hide-small">MG HECTOR PLUS</a>
+            <a href="#MG HECTOR" class="w3-bar-item w3-button w3-hide-small"> MG HECTOR PLUS</a>
+            <a href="#MG HECTOR PLUS" class="w3-bar-item w3-button w3-hide-small">MG HECTOR</a>
             <a href="#MG ZS-EV" class="w3-bar-item w3-button w3-hide-small"> MG ZS-EV</a>
             <a href="#MG GLOSTER" class="w3-bar-item w3-button w3-hide-small">MG GLOSTER</a>
             <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
@@ -91,8 +91,8 @@
 
         <!-- Navbar on small screens -->
         <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-            <a href="#MG HECTOR" class="w3-bar-item w3-button" onclick="toggleFunction()">MG HECTOR</a>
-            <a href="#MG HECTOR PLUS" class="w3-bar-item w3-button" onclick="toggleFunction()">MG HECTOR PLUS</a>
+            <a href="#MG HECTOR" class="w3-bar-item w3-button" onclick="toggleFunction()">MG HECTOR PLUS</a>
+            <a href="#MG HECTOR PLUS" class="w3-bar-item w3-button" onclick="toggleFunction()">MG HECTOR</a>
             <a href="#MG ZS-EV" class="w3-bar-item w3-button" onclick="toggleFunction()">MG ZS-EV</a>
             <a href="#MG GLOSTER" class="w3-bar-item w3-button" onclick="toggleFunction()">MG GLOSTER</a>
             <a href="#" class="w3-bar-item w3-button">SEARCH</a>
@@ -115,73 +115,7 @@
     
     
 
-        <div class="w3-row w3-center w3-dark-grey w3-padding-16" id="MG HECTOR">
-        
-        <h3 class="w3-center w3-large">MG HECTOR</h3>
-
-        <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-        <div class="w3-row-padding w3-center">
-            <div class="w3-col m3">
-                <img src={{url_for("static",filename="img/hector.jpg")}} style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="MG HECTOR">
-            </div>
-
-            <div class="w3-col m3">
-                <img src={{url_for("static",filename="img/hectint6.jpg")}} style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="MG HECTOR">
-            </div>
-
-            <div class="w3-col m3">
-                <img src={{url_for("static",filename="img/hectint3.jpg")}} style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="MG HECTOR">
-            </div>
-
-            <div class="w3-col m3">
-                <img src={{url_for("static",filename="img/hectint4.jpg")}} style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="MG HECTOR">
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for full size images on click-->
-    <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-        <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-            <img id="img01" class="w3-image">
-            <p id="caption" class="w3-opacity w3-large"></p>
-        </div>
-    </div>
-
-    <!-- Container (About Section2) -->
-     <div class="w3-content w3-container w3-padding-64">
-        <div class="w3-row">
-            
-            <!-- Hide this text on small devices -->
-            <div class="w3-col m6  w3-padding-large">
-                <a href="https://www.mgmotor.co.in/vehicles/mghector">
-                     <button class="w3-button w3-black w3-left w3-section">
-                          Click here to know MG Hector Features
-                     </button>
-                </a>
-                <form method="POST" name="google-sheet">
-                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-                        </div>
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="email" placeholder="Email" required name="Email">
-                        </div>
-                    </div>
-                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" required name="Mobile Number">
-                    <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
-                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit"  type="submit">
-                        <i class="fa fa-paper-plane"></i> Submit Enquiry
-                    </button>
-                    <p id="greet"></p>
-                </form>
-                <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
-                <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
-                <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
-            </div>
-        </div>
-    </div>
-
+      
      <div class="w3-row w3-center w3-dark-grey w3-padding-16"  id="MG HECTOR PLUS">
         
         <h3 class="w3-center w3-large">MG HECTOR PLUS</h3>
@@ -401,11 +335,7 @@
             <div class="w3-col m3">
                 <img src={{url_for("static",filename="img/MG-Gloster-front-side.jpg")}} style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="MG GLOSTER">
             </div>
-
-            <div class="w3-col m3">
-                <img src={{url_for("static",filename="glos7.png")}} style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="MG GLOSTER">
-            </div>
-
+            
             <div class="w3-col m3">
                 <img src={{url_for("static",filename="img/glos3.jpg")}} style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="MG GLOSTER">
             </div>
