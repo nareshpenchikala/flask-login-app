@@ -33,7 +33,7 @@
         min-height: 100%;
     }
      /* Second image (Portfolio) */
-    .bgimg-2 { background-image: url({{url_for("static",filename="img/mghector.jpg") }});
+    .bgimg-2 { background-image: url({{url_for("static",filename="img/mghector1.jpg") }});
         min-height: 400px;
     }
 
@@ -155,7 +155,13 @@
     <!-- Container (About Section2) -->
     <div class="w3-content w3-container w3-padding-64" id="MG HECTOR PLUS">
         <h3 class="w3-center">MG HECTOR PLUS</h3>
-        <p></p>
+        <p>
+        <a href="https://www.mgmotor.co.in/vehicles/mghector">
+                <button class="w3-button w3-black w3-left w3-section">
+                        MG Hector Specifications
+                </button>
+         </a>
+        </p>
         <div class="w3-row">
             
             <!-- Hide this text on small devices -->
@@ -169,13 +175,8 @@
                             <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
                         </div>
                     </div>
-                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter Proper 10 digit mobile number!" required name="Mobile Number">
+                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" required name="Mobile Number">
                     <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
-                     <a href="https://www.mgmotor.co.in/vehicles/mghector">
-                          <button class="w3-button w3-black w3-left w3-section">
-                                  MG Hector Specifications
-                          </button>
-                     </a>
                     <button class="w3-button w3-black w3-right w3-section" onclick="thanks()" type="submit">
                         <i class="fa fa-paper-plane"></i> Submit Enquiry
                     </button>
