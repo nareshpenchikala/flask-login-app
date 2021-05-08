@@ -20,7 +20,7 @@
     }
 
     /* Create a Parallax Effect */
-    .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+    .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
@@ -104,57 +104,16 @@
             <span class="w3-center w3-padding-small w3-black w3-xlarge w3-wide w3-animate-opacity">SALES ENQUIRY</span>
         </div>
     </div>
+    
+    
+    
 
     <div class="bgimg-2 w3-display-container w3-opacity-mix" id="MG HECTOR">
     </div>
 
-
-
-    <!-- Container (About Section) -->
+    <!-- Container (About Section2) -->
     <div class="w3-content w3-container w3-padding-64" id="MG HECTOR">
         <h3 class="w3-center">MG HECTOR</h3>
-        <p></p>
-        <div class="w3-row">
-            
-            <!-- Hide this text on small devices -->
-            <div class="w3-col w3-center m6  w3-padding-large">
-                <form method="POST" name="google-sheet">
-                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-                        </div>
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-                        </div>
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" required name="Mobile Number">
-                        <div>
-                     </div>
-                    <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
-                    <a href="https://www.mgmotor.co.in/vehicles/mghector">
-                          <button class="w3-button w3-black w3-left w3-section">
-                                  MG Hector Specifications
-                          </button>
-                     </a>
-                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks()" type="submit">
-                        <i class="fa fa-paper-plane"></i> Submit Enquiry
-                    </button>
-                    <p id="greet"></p>
-                </form>
-                <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
-                <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
-                <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="bgimg-3 w3-display-container w3-opacity-mix" id="MG HECTOR PLUS">
-    </div>
-
-    <!-- Container (About Section2) -->
-    <div class="w3-content w3-container w3-padding-64" id="MG HECTOR PLUS">
-        <h3 class="w3-center">MG HECTOR PLUS</h3>
         <p>
         </p>
         <div class="w3-row">
@@ -163,7 +122,7 @@
             <div class="w3-col m6  w3-padding-large">
                 <a href="https://www.mgmotor.co.in/vehicles/mghector">
                      <button class="w3-button w3-black w3-left w3-section">
-                          Click here to know MG Hector Plus Specifications
+                          Click here to know more about MG Hector Specifications
                      </button>
                 </a>
                 <form method="POST" name="google-sheet">
@@ -189,23 +148,23 @@
         </div>
     </div>
 
-    <div class="bgimg-4 w3-display-container w3-opacity-mix" id="MG ZS-EV">
-        <div class="w3-display-middle" style="white-space:nowrap;">
-            <span class="w3-center w3-padding-small w3-black w3-xxxlarge w3-wide w3-animate-opacity">MG ZS-EV </span>
-        </div>
+    <div class="bgimg-3 w3-display-container w3-opacity-mix" id="MG HECTOR PLUS">
     </div>
 
-    <!-- Container (About Section3) -->
-    <div class="w3-content w3-container w3-padding-64" id="MG ZS-EV">
-        <h3 class="w3-center">MG ZS-EV</h3>
-        <p></p>
+    <!-- Container (About Section2) -->
+    <div class="w3-content w3-container w3-padding-64" id="MG HECTOR PLUS">
+        <h3 class="w3-center">MG HECTOR PLUS</h3>
+        <p>
+        </p>
         <div class="w3-row">
-            <div class="w3-col m6 w3-center w3-padding-large">
-                <p><b><i class="fa fa-car w3-margin-right"></i>MG ZS-EV</b></p><br>
-                <img src={{url_for("static",filename="img/mg-zs-ev.jpg")}} class="w3-image" alt="Photo of Mg zs-ev" width="150" height="150">
-            </div>
+            
             <!-- Hide this text on small devices -->
             <div class="w3-col m6  w3-padding-large">
+                <a href="https://www.mgmotor.co.in/vehicles/mghector">
+                     <button class="w3-button w3-black w3-left w3-section">
+                          Click here to know  more about MG Hector Plus Specifications
+                     </button>
+                </a>
                 <form method="POST" name="google-sheet">
                     <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                         <div class="w3-half">
@@ -215,7 +174,7 @@
                             <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
                         </div>
                     </div>
-                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter Proper 10 digit mobile number!" pattern="[1-9]{1}[0-9]{9}" required name="Mobile Number">
+                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" required name="Mobile Number">
                     <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
                     <button class="w3-button w3-black w3-right w3-section" onclick="thanks()" type="submit">
                         <i class="fa fa-paper-plane"></i> Submit Enquiry
@@ -229,23 +188,26 @@
         </div>
     </div>
 
-    <div class="bgimg-5 w3-display-container w3-opacity-mix" id="MG GLOSTER">
-        <div class="w3-display-middle" style="white-space:nowrap;">
-            <span class="w3-center w3-padding-small w3-black w3-xxxlarge w3-wide w3-animate-opacity">MG GLOSTER</span>
-        </div>
+    
+    
+
+    <div class="bgimg-4 w3-display-container w3-opacity-mix" id="MG ZS-EV">
     </div>
 
-    <!-- Container (About Section4) -->
-    <div class="w3-content w3-container w3-padding-64" id="MG GLOSTER">
-        <h3 class="w3-center">MG GLOSTER</h3>
-        <p></p>
+    <!-- Container (About Section2) -->
+    <div class="w3-content w3-container w3-padding-64" id="MG ZS-EV">
+        <h3 class="w3-center">MG ZS-EV</h3>
+        <p>
+        </p>
         <div class="w3-row">
-            <div class="w3-col m6 w3-center w3-padding-large">
-                <p><b><i class="fa fa-car w3-margin-right"></i>MG GLOSTER</b></p><br>
-                <img src={{url_for("static",filename="img/MG-Gloster-front-side.jpg")}} class="w3-image" alt="Photo of Mg gloster" width="150" height="150">
-            </div>
+            
             <!-- Hide this text on small devices -->
             <div class="w3-col m6  w3-padding-large">
+                <a href="https://www.mgmotor.co.in/vehicles/mgzsev">
+                     <button class="w3-button w3-black w3-left w3-section">
+                          Click here to know more about MG ZS-EV Specifications
+                     </button>
+                </a>
                 <form method="POST" name="google-sheet">
                     <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                         <div class="w3-half">
@@ -255,7 +217,50 @@
                             <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
                         </div>
                     </div>
-                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter Proper 10 digit mobile number!" pattern="[1-9]{1}[0-9]{9}" required name="Mobile Number">
+                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" required name="Mobile Number">
+                    <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
+                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks()" type="submit">
+                        <i class="fa fa-paper-plane"></i> Submit Enquiry
+                    </button>
+                    <p id="greet"></p>
+                </form>
+                <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+                <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+                <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+            </div>
+        </div>
+    </div>
+
+    
+    
+
+    <div class="bgimg-5 w3-display-container w3-opacity-mix" id="MG GLOSTER">
+    </div>
+
+    <!-- Container (About Section2) -->
+    <div class="w3-content w3-container w3-padding-64" id="MG GLOSTER">
+        <h3 class="w3-center">MG GLOSTER</h3>
+        <p>
+        </p>
+        <div class="w3-row">
+            
+            <!-- Hide this text on small devices -->
+            <div class="w3-col m6  w3-padding-large">
+                <a href="https://www.mgmotor.co.in/vehicles/mggloster">
+                     <button class="w3-button w3-black w3-left w3-section">
+                          Click here to know more about MG GLOSTER Specifications
+                     </button>
+                </a>
+                <form method="POST" name="google-sheet">
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                        </div>
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                        </div>
+                    </div>
+                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" required name="Mobile Number">
                     <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
                     <button class="w3-button w3-black w3-right w3-section" onclick="thanks()" type="submit">
                         <i class="fa fa-paper-plane"></i> Submit Enquiry
