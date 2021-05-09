@@ -408,7 +408,7 @@
                           Click here to know MG GLOSTER Features
                      </button>
                 </a>
-                <form method="POST" name="google-sheet5">
+                <form method="GET" name="google-sheet5">
                     <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                         <div class="w3-half">
                             <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
@@ -505,7 +505,7 @@
 
             form.addEventListener('submit', e => {
               e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              fetch(scriptURL, { method: 'GET', body: new FormData(form)})
                 .then(response => alert("Thanks for the Feedback."))
                 .catch(error => console.error('Error!', error.message))
             })
