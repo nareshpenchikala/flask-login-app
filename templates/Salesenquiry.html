@@ -207,6 +207,17 @@
                 <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
                 <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
                 <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+                  <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzNhOvY765XS2m3wSdzcW_Bsq9LCerGusHUEUNX0Y9ubwvFDFZ3zg_8jWLTaqxjXtt4Tg/exec'
+            const form = document.forms['google-sheet2']
+
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for the Feedback."))
+                .catch(error => console.error('Error!', error.message))
+            })
+    </script>
             </div>
         </div>
     </div>
