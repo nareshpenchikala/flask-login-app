@@ -110,7 +110,7 @@
           <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge"></i>&emsp;1-136/3, Nh-16,Vijayawada, Andhra Pradesh 521108<br>
                     <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Office Phone: 084485 15579<br>
                     <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: shamiss786@gmail.com<br>
-           <form method="POST" name="google-sheet1">
+           <form method="GET" name="google-sheet1">
                     <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                         <div class="w3-half">
                             <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
@@ -188,7 +188,7 @@
                           Click here to know MG Hector Plus Features
                      </button>
                 </a>
-                <form method="POST" name="google-sheet2">
+                <form method="GET" name="google-sheet2">
                     <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                         <div class="w3-half">
                             <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
@@ -259,7 +259,7 @@
                           Click here to know MG Hector Features
                      </button>
                 </a>
-                <form method="POST" name="google-sheet3">
+                <form method="GET" name="google-sheet3">
                     <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                         <div class="w3-half">
                             <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
@@ -330,7 +330,7 @@
                           Click here to know MG ZS-EV Features
                      </button>
                 </a>
-                <form method="POST" name="google-sheet4">
+                <form method="GET" name="google-sheet4">
                     <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                         <div class="w3-half">
                             <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
@@ -398,7 +398,7 @@
                           Click here to know MG GLOSTER Features
                      </button>
                 </a>
-                <form method="POST" name="google-sheet5">
+                <form method="GET" name="google-sheet5">
                     <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                         <div class="w3-half">
                             <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
@@ -467,7 +467,7 @@
 
             form.addEventListener('submit3', e => {
               e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              fetch(scriptURL, { method: 'GET', body: new FormData(form)})
                 .then(response => alert("Thanks for the Feedback."))
                 .catch(error => console.error('Error!', error.message))
             })
@@ -481,7 +481,7 @@
 
             form.addEventListener('submit4', e => {
               e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              fetch(scriptURL, { method: 'GET', body: new FormData(form)})
                 .then(response => alert("Thanks for the Feedback."))
                 .catch(error => console.error('Error!', error.message))
             })
