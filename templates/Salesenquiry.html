@@ -120,7 +120,7 @@
                         </div>
                     </div>
                     <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit"  type="submit">
+                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit1"  type="submit">
                         <i class="fa fa-paper-plane"></i> SEND
                     </button>
                     <p id="greet"></p>
@@ -199,7 +199,7 @@
                     </div>
                     <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" pattern="[0-9]{10}" required name="Mobile Number">
                     <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
-                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit"  type="submit">
+                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit2"  type="submit">
                         <i class="fa fa-paper-plane"></i> Submit Enquiry
                     </button>
                     <p id="greet"></p>
@@ -270,7 +270,7 @@
                     </div>
                     <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" pattern="[0-9]{10}" required name="Mobile Number">
                     <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
-                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit"  type="submit">
+                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit3"  type="submit">
                         <i class="fa fa-paper-plane"></i> Submit Enquiry
                     </button>
                     <p id="greet"></p>
@@ -341,7 +341,7 @@
                     </div>
                     <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" pattern="[0-9]{10}" required name="Mobile Number">
                     <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
-                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit"  type="submit">
+                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit4"  type="submit">
                         <i class="fa fa-paper-plane"></i> Submit Enquiry
                     </button>
                     <p id="greet"></p>
@@ -409,7 +409,7 @@
                     </div>
                     <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" pattern="[0-9]{10}" required name="Mobile Number">
                     <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
-                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit" type="submit">
+                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit5" type="submit">
                         <i class="fa fa-paper-plane"></i> Submit Enquiry
                     </button>
                     <p id="greet"></p>
@@ -437,9 +437,9 @@
             const scriptURL = 'https://script.google.com/macros/s/AKfycbxIp-GddixHTALQxm2xjbERMCy8iOXrUB0RRQzkMjNXaplbZvQ/exec'
             const form = document.forms['google-sheet1']
 
-            form.addEventListener('submit', e => {
+            form.addEventListener('submit1', e => {
               e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              fetch(scriptURL, { method: 'GET', body: new FormData(form)})
                 .then(response => alert("Thanks for the Feedback."))
                 .catch(error => console.error('Error!', error.message))
             })
@@ -451,9 +451,9 @@
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzNhOvY765XS2m3wSdzcW_Bsq9LCerGusHUEUNX0Y9ubwvFDFZ3zg_8jWLTaqxjXtt4Tg/exec'
             const form = document.forms['google-sheet2']
 
-            form.addEventListener('submit', e => {
+            form.addEventListener('submit2', e => {
               e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              fetch(scriptURL, { method: 'GET', body: new FormData(form)})
                 .then(response => alert("Thanks for the Feedback."))
                 .catch(error => console.error('Error!', error.message))
             })
@@ -465,7 +465,7 @@
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzTDlkcBIEsS-1kRZnmrXtON8Ni3OuufRE8QM7Zc-Lb5N-QyOOH_Sb2axlDQCYufgqR/exec'
             const form = document.forms['google-sheet3']
 
-            form.addEventListener('submit', e => {
+            form.addEventListener('submit3', e => {
               e.preventDefault()
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => alert("Thanks for the Feedback."))
@@ -479,7 +479,7 @@
             const scriptURL = 'https://script.google.com/macros/s/AKfycbw9HRqNbLOpnvdwkaiqwxoZ5_dpH9SRc5dLGfllPpYwpntpTMfpCd8plkgrqWJ5_K5X/exec'
             const form = document.forms['google-sheet4']
 
-            form.addEventListener('submit', e => {
+            form.addEventListener('submit4', e => {
               e.preventDefault()
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => alert("Thanks for the Feedback."))
@@ -493,7 +493,7 @@
             const scriptURL = 'https://script.google.com/macros/s/AKfycbyef0UMpgyzrm40sLEMotf3eWeDHE7qQm7a5Cnlr-5gAnsTIqzrxcqO4YM22SwxS7zf/exec'
             const form = document.forms['google-sheet5']
 
-            form.addEventListener('submit', e => {
+            form.addEventListener('submit5', e => {
               e.preventDefault()
               fetch(scriptURL, { method: 'GET', body: new FormData(form)})
                 .then(response => alert("Will Get Back To You As Soon As Possible...."))
