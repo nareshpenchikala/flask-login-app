@@ -110,7 +110,7 @@
           <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge"></i>&emsp;1-136/3, Nh-16,Vijayawada, Andhra Pradesh 521108<br>
                     <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Office Phone: 084485 15579<br>
                     <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: shamiss786@gmail.com<br>
-           <form method="POST" name="google-sheet1">
+                           <form method="POST" name="google-sheet">
                     <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                         <div class="w3-half">
                             <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
@@ -119,12 +119,28 @@
                             <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
                         </div>
                     </div>
-                    <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit1"  type="submit">
-                        <i class="fa fa-paper-plane"></i> SEND
+                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" pattern="[0-9]{10}" required name="Mobile Number">
+                    <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
+                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit4" type="submit">
+                        <i class="fa fa-paper-plane"></i> Submit Enquiry
                     </button>
                     <p id="greet"></p>
                 </form>
+                  <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyef0UMpgyzrm40sLEMotf3eWeDHE7qQm7a5Cnlr-5gAnsTIqzrxcqO4YM22SwxS7zf/exec'
+            const form = document.forms['google-sheet']
+
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thank You....Will Get Back To You As Soon As Possible."))
+                .catch(error => console.error('Error!', error.message))
+            })
+    </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
                 <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
                 <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
                 <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
@@ -188,25 +204,6 @@
                           Click here to know MG Hector Plus Features
                      </button>
                 </a>
-                <form method="POST" name="google-sheet2">
-                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-                        </div>
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="email" placeholder="Email" required name="Email">
-                        </div>
-                    </div>
-                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" pattern="[0-9]{10}" required name="Mobile Number">
-                    <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
-                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit2"  type="submit">
-                        <i class="fa fa-paper-plane"></i> Submit Enquiry
-                    </button>
-                    <p id="greet"></p>
-                </form>
-                <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
-                <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
-                <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
                 
             </div>
         </div>
@@ -259,25 +256,6 @@
                           Click here to know MG Hector Features
                      </button>
                 </a>
-                <form method="POST" name="google-sheet3">
-                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-                        </div>
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="email" placeholder="Email" required name="Email">
-                        </div>
-                    </div>
-                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" pattern="[0-9]{10}" required name="Mobile Number">
-                    <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
-                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit3"  type="submit">
-                        <i class="fa fa-paper-plane"></i> Submit Enquiry
-                    </button>
-                    <p id="greet"></p>
-                </form>
-                <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
-                <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
-                <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
             </div>
         </div>
     </div>
@@ -330,25 +308,7 @@
                           Click here to know MG ZS-EV Features
                      </button>
                 </a>
-                <form method="POST" name="google-sheet4">
-                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-                        </div>
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="email" placeholder="Email" required name="Email">
-                        </div>
-                    </div>
-                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" pattern="[0-9]{10}" required name="Mobile Number">
-                    <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
-                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit4"  type="submit">
-                        <i class="fa fa-paper-plane"></i> Submit Enquiry
-                    </button>
-                    <p id="greet"></p>
-                </form>
-                <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
-                <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
-                <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+              
             </div>
         </div>
     </div>
@@ -398,25 +358,6 @@
                           Click here to know MG GLOSTER Features
                      </button>
                 </a>
-                <form method="POST" name="google-sheet5">
-                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-                        </div>
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="email" placeholder="Email" required name="Email">
-                        </div>
-                    </div>
-                    <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" pattern="[0-9]{10}" required name="Mobile Number">
-                    <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
-                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit5" type="submit">
-                        <i class="fa fa-paper-plane"></i> Submit Enquiry
-                    </button>
-                    <p id="greet"></p>
-                </form>
-                <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
-                <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
-                <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
             </div>
         </div>
     </div>
@@ -433,76 +374,6 @@
             <i class="fa fa-linkedin w3-hover-opacity"></i>
         </div>
     </footer>
-    <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxIp-GddixHTALQxm2xjbERMCy8iOXrUB0RRQzkMjNXaplbZvQ/exec'
-            const form = document.forms['google-sheet1']
-
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Will Get Back To You As Soon As Possible..."))
-                .catch(error => console.error('Error!', error.message))
-            })
-    </script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-     <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzNhOvY765XS2m3wSdzcW_Bsq9LCerGusHUEUNX0Y9ubwvFDFZ3zg_8jWLTaqxjXtt4Tg/exec'
-            const form = document.forms['google-sheet2']
-
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Will Get Back To You As Soon As Possible..."))
-                .catch(error => console.error('Error!', error.message))
-            })
-    </script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-     <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzTDlkcBIEsS-1kRZnmrXtON8Ni3OuufRE8QM7Zc-Lb5N-QyOOH_Sb2axlDQCYufgqR/exec'
-            const form = document.forms['google-sheet3']
-
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Will Get Back To You As Soon As Possible..."))
-                .catch(error => console.error('Error!', error.message))
-            })
-    </script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-     <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbw9HRqNbLOpnvdwkaiqwxoZ5_dpH9SRc5dLGfllPpYwpntpTMfpCd8plkgrqWJ5_K5X/exec'
-            const form = document.forms['google-sheet4']
-
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Will Get Back To You As Soon As Possible..."))
-                .catch(error => console.error('Error!', error.message))
-            })
-    </script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-     <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbyef0UMpgyzrm40sLEMotf3eWeDHE7qQm7a5Cnlr-5gAnsTIqzrxcqO4YM22SwxS7zf/exec'
-            const form = document.forms['google-sheet5']
-
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Will Get Back To You As Soon As Possible...."))
-                .catch(error => console.error('Error!', error.message))
-            })
-    </script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script>
 // Modal Image Gallery
