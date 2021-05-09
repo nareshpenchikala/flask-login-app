@@ -419,7 +419,7 @@
                     </div>
                     <input class="w3-input w3-border" type="number" placeholder="Mobile Number" title="Please Enter 10 digit mobile number!" pattern="[0-9]{10}" required name="Mobile Number">
                     <input class="w3-input w3-border" type="text" placeholder="ENQUIRY" required name="ENQUIRY">
-                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks(),check()" id="submit" type="submit">
+                    <button class="w3-button w3-black w3-right w3-section" onclick="thanks()" id="submit" type="submit">
                         <i class="fa fa-paper-plane"></i> Submit Enquiry
                     </button>
                     <p id="greet"></p>
@@ -506,7 +506,7 @@
             form.addEventListener('submit', e => {
               e.preventDefault()
               fetch(scriptURL, { method: 'GET', body: new FormData(form)})
-                .then(response => alert("Thanks for the Feedback."))
+                .then(response => alert("Will Get Back To You As Soon As Possible...."))
                 .catch(error => console.error('Error!', error.message))
             })
     </script>
