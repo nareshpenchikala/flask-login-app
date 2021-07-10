@@ -20,6 +20,10 @@ def home():
 def Salesenquiry():
   return render_template("Salesenquiry.html")
 
+@app.route("/Salesenquiry1", methods=['GET', 'POST'])
+def Salesenquiry1():
+  return render_template("Salesenquiry1.html")
+
 
 if __name__ == "__main__":
     app.run()
