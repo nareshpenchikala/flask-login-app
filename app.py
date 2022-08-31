@@ -30,11 +30,13 @@ def Salesenquiry():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
-    if request.form['username'] == 'admin' and request.form['password'] == 'admin':
-       session['admin'] = request.form['username']
-       return redirect(url_for('form_example'))
-    else:
-       error = 'Invalid Credentials. Please try again.'
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            error = 'Invalid Credentials. Please try again.'
+        else:
+            session['admin'] = request.form['username']
+            return redirect(url_for('form_example'))
+    return render_template('login.html', error=error)
 
 if __name__ == "__main__":
     app.run()
