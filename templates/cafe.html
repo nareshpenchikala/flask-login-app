@@ -76,8 +76,9 @@ body, html {
   </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
-<table width="300px" border="1" style="border-collapse:collapse;background-color:#E8DCFF">
+<div id="print-content">
+ <form>
+  <table width="300px" border="1" style="border-collapse:collapse;background-color:#E8DCFF">
 	<tr>
 		<td width="40px">1</td>
 		<td>Butter</td>
@@ -114,6 +115,18 @@ body, html {
 		<td align="center"><span id="sum">0</span></td>
 	</tr>
 </table>
+  <input type="button" onclick="printDiv('print-content')" value="print"/>
+</form>
+</div>
+<script type="text/javascript">
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        w=window.open();
+        w.document.write(printContents);
+        w.print();
+        w.close();
+    }
+</script>
  <script type="text/javascript"> 
 $(document).ready(function(){
 
