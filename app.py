@@ -15,7 +15,7 @@ def login_page():
     error = None
     if request.method == 'POST':
         if request.form['username'] == 'admin' and request.form['password'] == 'admin':
-            return render_template('s.html')
+            return render_template('cafe.html')
         else:
             error = 'Invalid Credentials. Please try again.'
 
