@@ -18,9 +18,9 @@ def home():
 @app.route('/home', methods=['GET', 'POST'])
 def form_example():
     if 'admin' not in session:
-        return render_template('cafe-home.html')
+        return render_template('login.html')
     else:
-        return redirect(url_for('login'))
+        return render_template('cafe-home.html')
 
 
 @app.route("/Salesenquiry", methods=['GET', 'POST'])
@@ -30,11 +30,11 @@ def Salesenquiry():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
-        if request.form['username'] == 'admin' and request.form['password'] == 'admin':
-            session['admin'] = request.form['username']
-            return redirect(url_for('form_example'))
-        else:
-            error = 'Invalid Credentials. Please try again.'
+    if request.form['username'] == 'admin' and request.form['password'] == 'admin':
+       session['admin'] = request.form['username']
+       return redirect(url_for('form_example'))
+    else:
+       error = 'Invalid Credentials. Please try again.'
     return render_template('login.html', error=error)
 
 
