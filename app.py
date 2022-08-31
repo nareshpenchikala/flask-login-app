@@ -35,8 +35,6 @@ def login():
        return redirect(url_for('form_example'))
     else:
        error = 'Invalid Credentials. Please try again.'
-    return render_template('login.html', error=error)
-
 
 if __name__ == "__main__":
     app.run()
