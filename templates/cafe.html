@@ -160,7 +160,8 @@ $(document).ready(function(){
 
 </script>
 	
-<div class="container mt-4">
+<div id="print-content" class="container mt-4">
+ <form>
       <div class="row">
         <div class="col-6 row-heading">
           Item
@@ -230,7 +231,8 @@ $(document).ready(function(){
           <span id="total_value">0</span
         </div>
       </div>
-      
+      <input type="button" onclick="printDiv('print-content')" value="print"/>
+   </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js
 "></script>
