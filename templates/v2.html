@@ -45,63 +45,6 @@
             flex-basis: 30%;
             margin-bottom: 20px;
         }
-        /* Style for menu items */
-        .menu-section {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #ccc;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .item-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .item-info {
-            display: flex;
-            align-items: center;
-        }
-
-        .item-checkbox {
-            margin-right: 10px;
-        }
-
-        .item-name {
-            font-weight: bold;
-        }
-
-        .item-price {
-            color: #777;
-        }
-
-        .quantity-input {
-            width: 40px;
-            text-align: center;
-        }
-
         
         #bill {
             width: 40%;
@@ -168,188 +111,19 @@
 <body>
     <div id="container">
         <h1>Restaurant Billing System</h1>
-        <div class="menu-section">
-            <div class="menu-header">
-                <h2>Food Items</h2>
-                <button>Show All</button>
+        <div id="container">
+            <div>
+                <label for="category">Select a Category:</label>
+                <select id="category" onchange="showCategoryMenu()">
+                    <option value="food">Food Items</option>
+                    <option value="drinks">Drinks</option>
+                    <option value="juices">Fresh Juices</option>
+                </select>
             </div>
-            <ul class="item-list">
-                <li class="menu-item">
-                    <label class="item-info">
-                        <input type="checkbox" class="item-checkbox" value="Burger" data-price="10.99">
-                        <span class="item-name">Burger1</span>
-                    </label>
-                    <span class="item-price">(₹10.99)</span>
-                    <input type="number" class="quantity-input" value="0" min="0">
-                </li>
-                <li class="menu-item">
-                    <label class="item-info">
-                        <input type="checkbox" class="item-checkbox" value="Burger" data-price="10.99">
-                        <span class="item-name">Burger2</span>
-                    </label>
-                    <span class="item-price">(₹10.99)</span>
-                    <input type="number" class="quantity-input" value="0" min="0">
-                </li>
-                <li class="menu-item">
-                    <label class="item-info">
-                        <input type="checkbox" class="item-checkbox" value="Burger" data-price="10.99">
-                        <span class="item-name">Burger3</span>
-                    </label>
-                    <span class="item-price">(₹10.99)</span>
-                    <input type="number" class="quantity-input" value="0" min="0">
-                </li>
-                <!-- Repeat the same structure for other menu items -->
-            </ul>
-        </div>
-        
-        <div id="menu">
-            <div class="menu-section">
-                <h2>Food Items</h2>
-                <ul>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Burger" data-price="10.99">
-                            Burger1 (₹10.99)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pizza1" data-price="12.99">
-                            Pizza1 (₹12.99)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pizza2" data-price="12.99">
-                            Pizza2 (₹12.99)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pizza3" data-price="12.99">
-                            Pizza3 (₹12.99)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pizza4" data-price="12.99">
-                            Pizza4 (₹12.99)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pizza5" data-price="12.99">
-                            Pizza5 (₹12.99)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pizza6" data-price="12.99">
-                            Pizza6 (₹12.99)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pizza7" data-price="12.99">
-                            Pizza7 (₹12.99)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pizza8" data-price="12.99">
-                            Pizza8 (₹12.99)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <!-- Add more food items here -->
-                </ul>
-            </div>
-            
-            <div class="menu-section">
-                <h2>Drinks</h2>
-                <ul>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Coke" data-price="1.99">
-                            Coke (₹1.99)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Coffee" data-price="2.49">
-                            Coffee (₹2.49)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <!-- Add more drink items here -->
-                </ul>
-            </div>
-            <div class="menu-section">
-                <h2>Soft Drinks</h2>
-                <ul>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Coke" data-price="1.99">
-                            Coke (₹1.99)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Coffee" data-price="2.49">
-                            Coffee (₹2.49)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Coffee" data-price="2.49">
-                            Coffee1 (₹2.49)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Coffee" data-price="2.49">
-                            Coffee2 (₹2.49)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Coffee" data-price="2.49">
-                            Coffee3 (₹2.49)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Coffee" data-price="2.49">
-                            Coffee4 (₹2.49)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Coffee" data-price="2.49">
-                            Coffee5 (₹2.49)
-                        </label>
-                        <input type="number" class="quantity" value="0" min="0">
-                    </li>
-                    <!-- Add more drink items here -->
-                </ul>
+            <div id="menu">
             </div>
         </div>
-        
+  
         <div id="bill">
             <h2>Bill</h2>
             <ul id="selectedItems"></ul>
@@ -396,42 +170,7 @@
                 document.getElementById('imageContainer').appendChild(image);
             }
         }
-    function calculateTotal() {
-        const items = document.querySelectorAll('.item');
-        const quantities = document.querySelectorAll('.quantity');
-        let total = 0;
-        let billContent = '';
-
-        document.getElementById('selectedItems').innerHTML = '';
-        document.getElementById('imageContainer').innerHTML = '';
-
-        items.forEach((item, index) => {
-            if (item.checked) {
-                const price = parseFloat(item.getAttribute('data-price'));
-                const quantity = parseInt(quantities[index].value);
-                const subtotal = price * quantity;
-
-                total += subtotal;
-
-                const itemName = item.value;
-                const listItem = document.createElement('li');
-                listItem.textContent = `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}`;
-                document.getElementById('selectedItems').appendChild(listItem);
-
-                billContent += `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}\n`;
-            }
-        });
-
-        document.getElementById('totalAmount').textContent = total.toFixed(2);
-
-        // Display the image when total is calculated
-        if (total > 0) {
-            const image = document.createElement('img');
-            image.src = '/static/receipt.png';  // Path to the image in the static folder
-            image.alt = 'Receipt Image';
-            document.getElementById('imageContainer').appendChild(image);
-        }
-    }
+        
     function printBill() {
         resetBillNumber(); // Call the function to reset the bill number
         const items = document.querySelectorAll('.item');
@@ -513,7 +252,7 @@
         });
     
         // Add current date and time, and bill number to the bill content
-        billContent = `Bill Number: ${billNumber}\n${currentDateTime}\n${billContent}`;
+        billContent = `Bill Number: ${billNumber}\n${currentDateTime}\n\n\n${billContent}`;
 
         // Show print dialog with bill content
         if (billContent !== '') {
@@ -585,6 +324,96 @@ function refreshPage() {
     location.reload();
 }
 
+let selectedItems = [];
+let category = 'food';
+function calculateTotal() {
+    let total = 0;
+    let billContent = '';
+
+    document.getElementById('selectedItems').innerHTML = '';
+    document.getElementById('imageContainer').innerHTML = '';
+
+    const quantityInputs = document.querySelectorAll('.quantity[data-item]');
+
+    quantityInputs.forEach(quantityInput => {
+        const itemName = quantityInput.getAttribute('data-item');
+        const item = menuItems[category].find(item => item.name === itemName);
+        const price = item.price;
+        const quantity = parseInt(quantityInput.value);
+        const subtotal = price * quantity;
+
+        total += subtotal;
+
+        const listItem = document.createElement('li');
+        listItem.textContent = `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}`;
+        document.getElementById('selectedItems').appendChild(listItem);
+
+        billContent += `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}\n`;
+    });
+
+    document.getElementById('totalAmount').textContent = total.toFixed(2);
+
+    // Display the image when total is calculated
+    if (total > 0) {
+        const image = document.createElement('img');
+        image.src = '/static/receipt.png';  // Path to the image in the static folder
+        image.alt = 'Receipt Image';
+        document.getElementById('imageContainer').appendChild(image);
+    }
+}
+
+
+
+function showCategoryMenu() {
+    const category = document.getElementById('category').value;
+    const menu = menuItems[category];
+
+    const menuContainer = document.getElementById('menu');
+    menuContainer.innerHTML = '';
+
+    menu.forEach(item => {
+        const itemElement = document.createElement('li');
+        const label = document.createElement('label');
+        label.innerHTML = `
+            <input type="checkbox" class="item" value="${item.name}" data-price="${item.price}">
+            ${item.name} (₹${item.price.toFixed(2)})
+        `;
+        const quantityInput = document.createElement('input');
+        quantityInput.type = 'number';
+        quantityInput.className = 'quantity';
+        quantityInput.value = '0';
+        quantityInput.min = '0';
+        quantityInput.setAttribute('data-item', item.name);
+
+        itemElement.appendChild(label);
+        itemElement.appendChild(quantityInput);
+        menuContainer.appendChild(itemElement);
+    });
+
+    // Clear selected items above the bill section and selectedItems array
+    selectedItems = [];
+    document.getElementById('selectedItems').innerHTML = '';
+    document.getElementById('totalAmount').textContent = '0.00';
+    document.getElementById('imageContainer').innerHTML = '';
+}
+
+const menuItems = {
+    food: [
+        { name: 'Burger', price: 10.99 },
+        { name: 'Pizza1', price: 12.99 },
+        { name: 'Pizza2', price: 12.99 }
+    ],
+    drinks: [
+        { name: 'Drink1', price: 5.99 },
+        { name: 'Drink2', price: 3.99 },
+        { name: 'Drink3', price: 2.99 }
+    ],
+    juices: [
+        { name: 'Juice1', price: 7.99 },
+        { name: 'Juice2', price: 6.99 },
+        { name: 'Juice3', price: 8.99 }
+    ]
+};
 
     </script>
 </body>

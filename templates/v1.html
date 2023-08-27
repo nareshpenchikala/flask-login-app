@@ -19,8 +19,7 @@
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            width: 80%;
-            max-width: 800px;
+            width: 90%;
             box-sizing: border-box;
             margin: 20px;
         }
@@ -36,14 +35,22 @@
         }
         
         #menu {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            background-image: url('menu-background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex; /* Display children side by side */
+            justify-content: space-between; /* Space out the items */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
         }
 
+        /* Adjust the width of each menu section */
         .menu-section {
-            flex-basis: 30%;
+            flex-basis: 30%; /* Each menu section takes up 30% of the available space */
             margin-bottom: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
         }
         
         #bill {
@@ -102,7 +109,39 @@
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        
+        body {
+            background-image: url('static/img/bill-background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Style the container with a semi-transparent background */
+        #container {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            /* Rest of your existing styles for #container */
+        }
+
+        button.logout {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button.logout:hover {
+            background-color: #c0392b;
+        }
+
+        /* Style the buttons */
+        button {
+            /* Rest of your existing button styles */
+            background-color: #e74c3c; /* Change the button color */
+        }
+
         button:hover {
             background-color: #0056b3;
         }
@@ -294,6 +333,370 @@
                     <!-- Add more drink items here -->
                 </ul>
             </div>
+            <div class="menu-section">
+                <h2>Fresh Juices</h2>
+                <ul>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Fresh Lime" data-price="20">
+                            Fresh Lime (₹20)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Mosambi" data-price="40">
+                            Mosambi (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Orange" data-price="40">
+                            Orange (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Pineapple" data-price="40">
+                            Pineapple (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Watermelon" data-price="40">
+                            Watermelon (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Mango" data-price="50">
+                            Mango (₹50)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Pomagranate" data-price="60">
+                            Pomagranate (₹60)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Apple" data-price="60">
+                            Apple (₹60)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Muskmelon" data-price="40">
+                            Muskmelon (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Papaya" data-price="40">
+                            Papaya (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Chikku" data-price="40">
+                            Chikku (₹60)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Mixed Fruit Juice" data-price="60">
+                            Mixed Fruit Juice (₹60)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+
+                    <!-- Add more drink items here -->
+                </ul>
+            </div>
+            <div class="menu-section">
+                <h2>Fresh Juices</h2>
+                <ul>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Fresh Lime" data-price="20">
+                            Fresh Lime (₹20)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Mosambi" data-price="40">
+                            Mosambi (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Orange" data-price="40">
+                            Orange (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Pineapple" data-price="40">
+                            Pineapple (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Watermelon" data-price="40">
+                            Watermelon (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Mango" data-price="50">
+                            Mango (₹50)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Pomagranate" data-price="60">
+                            Pomagranate (₹60)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Apple" data-price="60">
+                            Apple (₹60)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Muskmelon" data-price="40">
+                            Muskmelon (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Papaya" data-price="40">
+                            Papaya (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Chikku" data-price="40">
+                            Chikku (₹60)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Mixed Fruit Juice" data-price="60">
+                            Mixed Fruit Juice (₹60)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+
+                    <!-- Add more drink items here -->
+                </ul>
+            </div>
+            <div class="menu-section">
+                <h2>Fresh Juices</h2>
+                <ul>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Fresh Lime" data-price="20">
+                            Fresh Lime (₹20)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Mosambi" data-price="40">
+                            Mosambi (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Orange" data-price="40">
+                            Orange (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Pineapple" data-price="40">
+                            Pineapple (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Watermelon" data-price="40">
+                            Watermelon (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Mango" data-price="50">
+                            Mango (₹50)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Pomagranate" data-price="60">
+                            Pomagranate (₹60)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Apple" data-price="60">
+                            Apple (₹60)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Muskmelon" data-price="40">
+                            Muskmelon (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Papaya" data-price="40">
+                            Papaya (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Chikku" data-price="40">
+                            Chikku (₹60)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Mixed Fruit Juice" data-price="60">
+                            Mixed Fruit Juice (₹60)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+
+                    <!-- Add more drink items here -->
+                </ul>
+            </div>
+            <div class="menu-section">
+                <h2>Fresh Juices</h2>
+                <ul>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Fresh Lime" data-price="20">
+                            Fresh Lime (₹20)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Mosambi" data-price="40">
+                            Mosambi (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Orange" data-price="40">
+                            Orange (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Pineapple" data-price="40">
+                            Pineapple (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Watermelon" data-price="40">
+                            Watermelon (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Mango" data-price="50">
+                            Mango (₹50)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Pomagranate" data-price="60">
+                            Pomagranate (₹60)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Apple" data-price="60">
+                            Apple (₹60)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Muskmelon" data-price="40">
+                            Muskmelon (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Papaya" data-price="40">
+                            Papaya (₹40)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Chikku" data-price="40">
+                            Chikku (₹60)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Mixed Fruit Juice" data-price="60">
+                            Mixed Fruit Juice (₹60)
+                        </label>
+                        <input type="number" class="quantity" value="0" min="0">
+                    </li>
+
+                    <!-- Add more drink items here -->
+                </ul>
+            </div>
         </div>
         
         <div id="bill">
@@ -305,6 +708,7 @@
             <button onclick="printBill()">Print Bill</button>  
         </div>
         <button onclick="refreshPage()">Back</button>
+        <button class="logout" onclick="logout()">Logout</button>
 
     </div>
     <script>
@@ -529,6 +933,11 @@ function getWeekday() {
 
 function refreshPage() {
     location.reload();
+}
+
+function logout() {
+    // Redirect to the login page
+    window.location.href = "/logout"; // Replace with the actual login page URL
 }
 
 

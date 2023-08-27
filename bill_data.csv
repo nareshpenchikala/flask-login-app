@@ -1,0 +1,33 @@
+Date,bill Number,Time,weekday,Item Name,Quantity,Cost
+"August 25, 2023 at 5:21:34 PM",2,5:21:34 PM,Friday,Pizza5,2,25.98
+"August 25, 2023 at 5:21:34 PM",2,5:21:34 PM,Friday,Pizza6,2,25.98
+"August 25, 2023 at 5:21:52 PM",3,5:21:52 PM,Friday,Pizza5,2,25.98
+"August 25, 2023 at 5:21:52 PM",3,5:21:52 PM,Friday,Pizza6,2,25.98
+"August 25, 2023 at 5:21:52 PM",3,5:21:52 PM,Friday,Pizza7,2,25.98
+"August 25, 2023 at 5:31:52 PM",4,5:31:52 PM,Friday,Pizza5,2,25.98
+"August 25, 2023 at 5:31:52 PM",4,5:31:52 PM,Friday,Pizza6,2,25.98
+"August 25, 2023 at 5:31:52 PM",4,5:31:52 PM,Friday,Pizza7,2,25.98
+"August 25, 2023 at 6:29:13 PM",5,6:29:13 PM,Friday,Burger,2,21.98
+"August 25, 2023 at 6:29:13 PM",5,6:29:13 PM,Friday,Pizza1,2,25.98
+"August 25, 2023 at 6:48:59 PM",6,6:48:59 PM,Friday,Juice1,2,15.98
+"August 25, 2023 at 6:49:34 PM",7,6:49:34 PM,Friday,Juice1,2,15.98
+"August 25, 2023 at 6:49:34 PM",7,6:49:34 PM,Friday,Juice2,2,13.98
+"August 27, 2023 at 10:42:18 AM",2,10:42:18 AM,Sunday,Pizza1,2,25.98
+"August 27, 2023 at 11:41:34 AM",2,11:41:34 AM,Sunday,Fresh Lime,2,40
+"August 27, 2023 at 11:41:34 AM",2,11:41:34 AM,Sunday,Mosambi,2,80
+"August 27, 2023 at 11:41:34 AM",2,11:41:34 AM,Sunday,Orange,1,40
+"August 27, 2023 at 12:13:36 PM",3,12:13:36 PM,Sunday,Pineapple,2,80
+"August 27, 2023 at 12:13:36 PM",3,12:13:36 PM,Sunday,Watermelon,2,80
+"August 27, 2023 at 12:43:33 PM",4,12:43:33 PM,Sunday,Burger,2,21.98
+"August 27, 2023 at 12:43:33 PM",4,12:43:33 PM,Sunday,Pizza2,3,38.97
+"August 27, 2023 at 12:55:36 PM",5,12:55:36 PM,Sunday,Burger,2,21.98
+"August 27, 2023 at 12:55:36 PM",5,12:55:36 PM,Sunday,Pizza2,2,25.98
+"August 27, 2023 at 12:55:36 PM",5,12:55:36 PM,Sunday,Pizza4,2,25.98
+"August 27, 2023 at 1:01:28 PM",6,1:01:28 PM,Sunday,Burger,2,21.98
+"August 27, 2023 at 1:01:28 PM",6,1:01:28 PM,Sunday,Pizza1,2,25.98
+"August 27, 2023 at 1:01:28 PM",6,1:01:28 PM,Sunday,Pizza4,2,25.98
+"August 27, 2023 at 1:01:28 PM",6,1:01:28 PM,Sunday,Mosambi,2,80
+"August 27, 2023 at 1:01:28 PM",6,1:01:28 PM,Sunday,Mango,2,100
+"August 27, 2023 at 1:32:18 PM",7,1:32:18 PM,Sunday,Apple,2,120
+"August 27, 2023 at 1:32:18 PM",7,1:32:18 PM,Sunday,Muskmelon,2,80
+"August 27, 2023 at 1:32:18 PM",7,1:32:18 PM,Sunday,Chikku,2,80

@@ -8,27 +8,46 @@ from flask import Flask, render_template, request, jsonify
 from escpos.printer import Usb
 import qrcode
 import os
-from flask import Flask, render_template, redirect, url_for, request, session
+from flask import Flask, render_template, redirect, url_for, request, session, flash
 import gunicorn
 import csv
 import os
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'  # Replace with a secret key for session encryption
+
+# Simulated user database (replace with your own authentication system)
+users = {'admin': 'admin'}
+
 
 @app.route('/')
 def index():
-    return render_template('v1.html')
+    return render_template('login_auth.html')
 
-@app.route('/login', methods=['GET', 'POST'])
-def login_page():
-    error = None
-    if request.method == 'POST':
-        if request.form['username'] == 'admin' and request.form['password'] == 'admin':
-            return render_template('cafe.html')
-        else:
-            error = 'Invalid Credentials. Please try again.'
+@app.route('/login', methods=['POST'])
+def login():
+    username = request.form['username']
+    password = request.form['password']
 
-    return render_template('login.html', error=error)
+    if username in users and users[username] == password:
+        session['logged_in'] = True
+        return redirect(url_for('billing'))
+    else:
+        flash('Invalid username or password', 'error')
+        return redirect(url_for('index'))
+    
+@app.route('/billing')
+def billing():
+    if session.get('logged_in'):
+        return render_template('v1.html')
+    else:
+        return redirect(url_for('index'))
+
+@app.route('/logout')
+def logout():
+    # Perform any logout actions here (e.g., clearing session data)
+    session.clear()
+    return redirect(url_for('index'))
 
 @app.route('/print_bill', methods=['POST'])
 def print_bill():
@@ -92,4 +111,4 @@ def add_purchase():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
