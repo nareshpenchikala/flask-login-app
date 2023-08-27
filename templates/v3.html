@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant Billing System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        #container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 800px;
+            box-sizing: border-box;
+            margin: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        #menu, #bill {
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        #menu {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .menu-section {
+            flex-basis: 30%;
+            margin-bottom: 20px;
+        }
+        
+        #bill {
+            width: 40%;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        label {
+            display: flex;
+            align-items: center;
+        }
+        
+        .item {
+            margin-right: 5px;
+        }
+        
+        .quantity {
+            width: 40px;
+            text-align: center;
+        }
+        
+        #selectedItems {
+            margin-top: 20px;
+        }
+        
+        #totalAmount {
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 10px;
+            display: block;
+        }
+        
+        #imageContainer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Restaurant Billing System</h1>
+        <div id="container">
+            <div>
+                <label for="category">Select a Category:</label>
+                <select id="category" onchange="showCategoryMenu()">
+                    <option value="food">Food Items</option>
+                    <option value="drinks">Drinks</option>
+                    <option value="juices">Fresh Juices</option>
+                </select>
+            </div>
+            <div id="menu">
+            </div>
+        </div>
+  
+        <div id="bill">
+            <h2>Bill</h2>
+            <ul id="selectedItems"></ul>
+            <p>Total: ₹<span id="totalAmount">0.00</span></p>
+            <div id="imageContainer"></div>
+            <button onclick="calculateTotal()">Calculate Total</button>
+            <button onclick="printBill()">Print Bill</button>  
+        </div>
+        <button onclick="refreshPage()">Back</button>
+
+    </div>
+    <script>
+        // JavaScript code here...
+        function calculateTotal() {
+            const items = document.querySelectorAll('.item');
+            const quantities = document.querySelectorAll('.quantity');
+            let total = 0;
+
+            document.getElementById('selectedItems').innerHTML = '';
+            document.getElementById('imageContainer').innerHTML = '';
+
+            items.forEach((item, index) => {
+                if (item.checked) {
+                    const price = parseFloat(item.getAttribute('data-price'));
+                    const quantity = parseInt(quantities[index].value);
+                    const subtotal = price * quantity;
+
+                    total += subtotal;
+
+                    const itemName = item.value;
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}`;
+                    document.getElementById('selectedItems').appendChild(listItem);
+                }
+            });
+
+            document.getElementById('totalAmount').textContent = total.toFixed(2);
+
+            // Display the image when total is calculated
+            if (total > 0) {
+                const image = document.createElement('img');
+                image.src = '/static/receipt.png';  // Path to the image in the static folder
+                image.alt = 'Receipt Image';
+                document.getElementById('imageContainer').appendChild(image);
+            }
+        }
+        
+    function printBill() {
+        resetBillNumber(); // Call the function to reset the bill number
+        const items = document.querySelectorAll('.item');
+        const quantities = document.querySelectorAll('.quantity');
+        let total = 0;
+        let billContent = '';
+        let selectedItems = [];
+        const currentDateTime = getCurrentDateTime();
+        // Get the weekday using the new function
+        const weekday = getWeekday();
+        const Time = getCurrentTime()
+        // Get the bill number and increment the counter
+        let billNumber = localStorage.getItem('billNumber');
+        if (!billNumber) {
+            billNumber = 1;
+        } else {
+            billNumber = parseInt(billNumber) + 1;
+        }
+        localStorage.setItem('billNumber', billNumber);
+
+        document.getElementById('selectedItems').innerHTML = '';
+        document.getElementById('imageContainer').innerHTML = '';
+
+        items.forEach((item, index) => {
+            if (item.checked) {
+                const price = parseFloat(item.getAttribute('data-price'));
+                const quantity = parseInt(quantities[index].value);
+                const subtotal = price * quantity;
+
+                total += subtotal;
+
+                const itemName = item.value;
+                const listItem = document.createElement('li');
+                listItem.textContent = `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}`;
+                document.getElementById('selectedItems').appendChild(listItem);
+
+                billContent += `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}\n`;
+            }
+        });
+
+        document.getElementById('totalAmount').textContent = total.toFixed(2);
+
+        items.forEach((item, index) => {
+            if (item.checked) {
+                const price = parseFloat(item.getAttribute('data-price'));
+                const quantity = parseInt(quantities[index].value);
+                const subtotal = price * quantity;
+
+                total += subtotal;
+
+                selectedItems.push({
+                    name: item.value,
+                    quantity,
+                    subtotal
+                });
+            }
+        });
+
+        fetch('/print_bill', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                billno: billNumber,
+                date: currentDateTime,
+                time: Time,
+                dayOfWeek: weekday,
+                items: selectedItems,
+                total
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    
+        // Add current date and time, and bill number to the bill content
+        billContent = `Bill Number: ${billNumber}\n${currentDateTime}\n\n\n${billContent}`;
+
+        // Show print dialog with bill content
+        if (billContent !== '') {
+            const printWindow = window.open('', '_blank');
+            printWindow.document.open();
+            printWindow.document.write(`<pre>${billContent}\nTotal: ₹${total.toFixed(2)}</pre>`);
+            printWindow.document.close();
+            printWindow.print();
+        }
+    }
+
+// Function to get current date and time in IST with AM/PM format
+function getCurrentDateTime() {
+    const options = {
+        timeZone: 'Asia/Kolkata',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: true
+    };
+
+    const dateTime = new Date().toLocaleString('en-US', options);
+    return dateTime;
+}
+
+function getCurrentTime() {
+    const options = {
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: true
+    };
+
+    const Time = new Date().toLocaleString('en-US', options);
+    return Time;
+}
+
+// Function to get current date in yyyy-mm-dd format
+function resetting_purpose_getCurrentDate() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+// Reset bill number at the start of a new day
+function resetBillNumber() {
+    const currentDate = resetting_purpose_getCurrentDate();
+    const lastResetDate = localStorage.getItem('lastResetDate');
+
+    if (lastResetDate !== currentDate) {
+        localStorage.setItem('lastResetDate', currentDate);
+        localStorage.setItem('billNumber', '1');
+    }
+}
+
+function getWeekday() {
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const dayOfWeek = daysOfWeek[new Date().getDay()];
+    console.log(dayOfWeek); 
+    return dayOfWeek;
+}
+
+function refreshPage() {
+    location.reload();
+}
+
+let selectedItems = [];
+let category = 'food';
+function calculateTotal() {
+    let total = 0;
+    let billContent = '';
+
+    document.getElementById('selectedItems').innerHTML = '';
+    document.getElementById('imageContainer').innerHTML = '';
+
+    const quantityInputs = document.querySelectorAll('.quantity[data-item]');
+
+    quantityInputs.forEach(quantityInput => {
+        const itemName = quantityInput.getAttribute('data-item');
+        const item = menuItems[category].find(item => item.name === itemName);
+        const price = item.price;
+        const quantity = parseInt(quantityInput.value);
+        const subtotal = price * quantity;
+
+        total += subtotal;
+
+        const listItem = document.createElement('li');
+        listItem.textContent = `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}`;
+        document.getElementById('selectedItems').appendChild(listItem);
+
+        billContent += `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}\n`;
+    });
+
+    document.getElementById('totalAmount').textContent = total.toFixed(2);
+
+    // Display the image when total is calculated
+    if (total > 0) {
+        const image = document.createElement('img');
+        image.src = '/static/receipt.png';  // Path to the image in the static folder
+        image.alt = 'Receipt Image';
+        document.getElementById('imageContainer').appendChild(image);
+    }
+}
+
+
+
+function showCategoryMenu() {
+    const category = document.getElementById('category').value;
+    const menu = menuItems[category];
+
+    const menuContainer = document.getElementById('menu');
+    menuContainer.innerHTML = '';
+
+    menu.forEach(item => {
+        const itemElement = document.createElement('li');
+        const label = document.createElement('label');
+        label.innerHTML = `
+            <input type="checkbox" class="item" value="${item.name}" data-price="${item.price}">
+            ${item.name} (₹${item.price.toFixed(2)})
+        `;
+        const quantityInput = document.createElement('input');
+        quantityInput.type = 'number';
+        quantityInput.className = 'quantity';
+        quantityInput.value = '0';
+        quantityInput.min = '0';
+        quantityInput.setAttribute('data-item', item.name);
+
+        itemElement.appendChild(label);
+        itemElement.appendChild(quantityInput);
+        menuContainer.appendChild(itemElement);
+    });
+
+    // Clear selected items above the bill section and selectedItems array
+    selectedItems = [];
+    document.getElementById('selectedItems').innerHTML = '';
+    document.getElementById('totalAmount').textContent = '0.00';
+    document.getElementById('imageContainer').innerHTML = '';
+}
+
+const menuItems = {
+    food: [
+        { name: 'Burger', price: 10.99 },
+        { name: 'Pizza1', price: 12.99 },
+        { name: 'Pizza2', price: 12.99 }
+    ],
+    drinks: [
+        { name: 'Drink1', price: 5.99 },
+        { name: 'Drink2', price: 3.99 },
+        { name: 'Drink3', price: 2.99 }
+    ],
+    juices: [
+        { name: 'Juice1', price: 7.99 },
+        { name: 'Juice2', price: 6.99 },
+        { name: 'Juice3', price: 8.99 }
+    ]
+};
+
+    </script>
+</body>
+</html>
