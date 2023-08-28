@@ -82,12 +82,12 @@
             <label for="itemName">Item Name:</label>
             <select id="itemName" name="itemName" required>
                 <option value="" disabled selected>Select an option</option>
-                <option value="Item 1">Item 1</option>
-                <option value="Item 2">Item 2</option>
-                <option value="Item 3">Item 3</option>
-                <!-- Add more options as needed -->
+                {% for option in options %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
             </select>
             <input type="text" id="newItem" name="newItem" placeholder="Enter New Item">
+            <button type="button" onclick="addOption()">Add Item</button>
 
             <label for="quantity">Quantity:</label>
             <input type="number" id="quantity" name="quantity" required>
@@ -163,6 +163,37 @@
             .catch(error => {
                 console.error('Error:', error);
             });
+        }
+        function addOption() {
+            const newOptionInput = document.getElementById('newItem');
+            const newOption = newOptionInput.value.trim();
+        
+            if (newOption !== '') {
+                const formData = {
+                    newOption: newOption
+                };
+        
+                fetch('/add_option', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    // Clear the input field
+                    newOptionInput.value = '';
+                    // Refresh the page to update the options in the select element
+                    location.reload();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            } else {
+                alert('Please enter a valid option.');
+            }
         }
     </script>
 </body>

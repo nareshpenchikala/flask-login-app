@@ -16,6 +16,33 @@ import os
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Replace with a secret key for session encryption
 
+options_file_path = os.path.abspath('options.txt')
+if not os.path.exists(options_file_path):
+    with open(options_file_path, 'w') as options_file:
+        options_file.write("Enter the options" + '\n')
+options=[]
+if os.path.exists(options_file_path):
+    with open(options_file_path, 'r') as options_file:
+        options = options_file.read().splitlines()
+
+# Load options from the local file on server startup    
+@app.route('/add_option', methods=['POST'])
+def add_option():
+    options_file_path = os.path.abspath('options.txt')    
+    data = request.json
+    new_option = data.get('newOption')
+    if not os.path.exists(options_file_path):
+        with open(options_file_path, 'w') as options_file:
+            options_file.write(new_option + '\n')
+    else:
+        # Append the new option to the existing file
+        with open(options_file_path, 'a') as options_file:
+            options_file.write(new_option + '\n')
+
+    
+    return jsonify({'message': 'Option added successfully'})
+
+
 # Simulated user database (replace with your own authentication system)
 users = {'admin': 'admin'}
 
@@ -80,7 +107,7 @@ def print_bill():
 
 @app.route('/raw_material_purchase')
 def raw_material_purchase():
-    return render_template('purchase.html')
+    return render_template('purchase.html', options=options)
 
 @app.route('/add_purchase', methods=['POST'])
 def add_purchase():
