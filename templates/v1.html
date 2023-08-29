@@ -698,6 +698,19 @@
 
                     <!-- Add more drink items here -->
                 </ul>
+                <script>
+                    // Get all the checkboxes and number inputs
+                    const checkboxes = document.querySelectorAll('.item');
+                    const quantityInputs = document.querySelectorAll('.quantity');
+
+                    // Add event listener to checkboxes
+                    checkboxes.forEach((checkbox, index) => {
+                        checkbox.addEventListener('change', () => {
+                            // Maintain focus on the corresponding number input
+                            quantityInputs[index].focus();
+                        });
+                    });
+                </script>
             </div>
         </div>
         
