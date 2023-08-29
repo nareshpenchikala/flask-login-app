@@ -708,6 +708,9 @@
                         checkbox.addEventListener('change', () => {
                             // Maintain focus on the corresponding number input
                             quantityInputs[index].focus();
+                            // Move cursor to the right of the input value
+                            const inputValue = quantityInputs[index].value;
+                            quantityInputs[index].setSelectionRange(inputValue.length, inputValue.length);
                         });
                     });
                 </script>
