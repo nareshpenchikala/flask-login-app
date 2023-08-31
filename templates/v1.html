@@ -71,6 +71,21 @@
             display: flex;
             align-items: center;
         }
+        .red-label {
+            color: red;
+        }
+        .brown-label {
+            color: brown;
+        }
+        .purple-label {
+            color: purple;
+        }
+        .green-label {
+            color: green;
+        }
+        .teal-label {
+            color: teal;
+        }
         
         .item {
             margin-right: 10px;
@@ -151,93 +166,133 @@
 </head>
 <body>
     <div id="container">
-        <h1>Aaha Spice Billing System</h1>
-        
+        <h1>Billing System</h1>
         <div id="menu">
             <div class="menu-section">
-                <h2>Food Items</h2>
+                <h2>Tea Menu</h2>
                 <ul>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Burger" data-price="10.99">
-                            Burger1 (₹10.99)
+                        <label class="brown-label">
+                            <input type="checkbox" class="item" value="Tea" data-price="10">
+                            Tea (₹10)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pizza1" data-price="12.99">
-                            Pizza1 (₹12.99)
+                        <label class="brown-label">
+                            <input type="checkbox" class="item" value="Elachi Tea" data-price="10">
+                            Elachi Tea (₹10)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pizza2" data-price="12.99">
-                            Pizza2 (₹12.99)
+                        <label class="brown-label">
+                            <input type="checkbox" class="item" value="Masala Tea" data-price="12">
+                            Masala Tea (₹12)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pizza3" data-price="12.99">
-                            Pizza3 (₹12.99)
+                        <label class="brown-label">
+                            <input type="checkbox" class="item" value="Ginger Tea" data-price="12">
+                            Ginger Tea (₹12)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pizza4" data-price="12.99">
-                            Pizza4 (₹12.99)
+                        <label class="brown-label">
+                            <input type="checkbox" class="item" value="Lemon Tea" data-price="15">
+                            Lemon Tea (₹15)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pizza5" data-price="12.99">
-                            Pizza5 (₹12.99)
+                        <label class="brown-label">
+                            <input type="checkbox" class="item" value="Ginger Lemon Tea" data-price="15">
+                            Ginger Lemon Tea (₹15)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pizza6" data-price="12.99">
-                            Pizza6 (₹12.99)
+                        <label class="brown-label">
+                            <input type="checkbox" class="item" value="Black Tea" data-price="15">
+                            Black Tea (₹15)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pizza7" data-price="12.99">
-                            Pizza7 (₹12.99)
+                        <label class="brown-label">
+                            <input type="checkbox" class="item" value="Green Tea" data-price="15">
+                            Green Tea (₹15)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pizza8" data-price="12.99">
-                            Pizza8 (₹12.99)
+                        <label class="brown-label">
+                            <input type="checkbox" class="item" value="Badam Tea" data-price="20">
+                            Badam Tea (₹20)
+                        </label>
+                        <input type="number" class="quantity" min="0">
+                    </li>
+                    <li>
+                        <label class="brown-label">
+                            <input type="checkbox" class="item" value="Badam Tea" data-price="20">
+                            Pista Tea (₹20)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <!-- Add more food items here -->
                 </ul>
             </div>
-            
             <div class="menu-section">
-                <h2>Drinks</h2>
+                <h2>Milk and Coffee Drinks</h2>
                 <ul>
                     <li>
                         <label>
-                            <input type="checkbox" class="item" value="Coke" value1="Coke (₹1.99)" data-price="1.99">
-                            Coke (₹1.99)
+                            <input type="checkbox" class="item" value="Coke" value1="Cofee" data-price="15">
+                            Cofee (₹15)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <li>
                         <label>
-                            <input type="checkbox" class="item" value="Coffee" data-price="2.49">
-                            Coffee (₹2.49)
+                            <input type="checkbox" class="item" value="Instant Coffee" data-price="15">
+                            Instant Coffee (₹15)
+                        </label>
+                        <input type="number" class="quantity" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Black Coffee" data-price="15">
+                            Black Coffee (₹15)
+                        </label>
+                        <input type="number" class="quantity" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Filter Coffee" data-price="20">
+                            Filter Coffee (₹20)
+                        </label>
+                        <input type="number" class="quantity" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Milk" data-price="10">
+                            Milk (₹10)
+                        </label>
+                        <input type="number" class="quantity"  min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Horlicks" data-price="15">
+                            Horlicks (₹15)
+                        </label>
+                        <input type="number" class="quantity" min="0">
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="Boost" data-price="15">
+                            Boost (₹15)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
@@ -245,89 +300,117 @@
                 </ul>
             </div>
             <div class="menu-section">
-                <h2>Fresh Juices</h2>
+                <h2>Fast Food</h2>
                 <ul>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Fresh Lime" data-price="20">
-                            Fresh Lime (₹20)
+                        <label class="teal-label">
+                            <input type="checkbox" class="item" value="Veg Fried Rice" data-price="40">
+                            Veg Fried Rice (₹40)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Mosambi" data-price="40">
-                            Mosambi (₹40)
+                        <label class="teal-label">
+                            <input type="checkbox" class="item" value="Mosambi" data-price="45">
+                            Single Egg Fried Rice (₹45)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Orange" data-price="40">
-                            Orange (₹40)
+                        <label class="teal-label">
+                            <input type="checkbox" class="item" value="Double Egg Fried Rice" data-price="50">
+                            Double Egg Fried Rice (₹50)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pineapple" data-price="40">
-                            Pineapple (₹40)
+                        <label class="teal-label">
+                            <input type="checkbox" class="item" value="Chicken Fried Rice" data-price="70">
+                            Chicken Fried Rice (₹70)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Watermelon" data-price="40">
-                            Watermelon (₹40)
+                        <label class="teal-label">
+                            <input type="checkbox" class="item" value="Paneer Fried Rice" data-price="60">
+                            Paneer Fried Rice (₹60)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Mango" data-price="50">
-                            Mango (₹50)
+                        <label class="teal-label">
+                            <input type="checkbox" class="item" value="Schezwan Chicken Fried Rice" data-price="40">
+                            Schezwan Chicken Fried Rice (₹40)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <li>
-                        <label>
+                        <label class="teal-label">
+                            <input type="checkbox" class="item" value="Schezwan Egg Fried Rice" data-price="50">
+                            Schezwan Egg Fried Rice (₹50)
+                        </label>
+                        <input type="number" class="quantity" min="0">
+                    </li>
+                    <li>
+                        <label class="teal-label">
                             <input type="checkbox" class="item" value="Pomagranate" data-price="60">
-                            Pomagranate (₹60)
+                            Schezwan Veg Fried Rice (₹60)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Apple" data-price="60">
-                            Apple (₹60)
+                        <label class="teal-label">
+                            <input type="checkbox" class="item" value="Veg Noodles" data-price="40">
+                            Veg Noodles (₹40)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Muskmelon" data-price="40">
-                            Muskmelon (₹40)
+                        <label class="teal-label">
+                            <input type="checkbox" class="item" value="Egg Noodles" data-price="50">
+                            Single Egg Noodles (₹50)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <li>
-                        <label>
+                        <label class="teal-label">
                             <input type="checkbox" class="item" value="Papaya" data-price="40">
-                            Papaya (₹40)
+                            Double Egg Noodles (₹55)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Chikku" data-price="40">
-                            Chikku (₹60)
+                        <label class="teal-label">
+                            <input type="checkbox" class="item" value="Chikku" data-price="70">
+                            Chicken Noodles (₹70)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Mixed Fruit Juice" data-price="60">
-                            Mixed Fruit Juice (₹60)
+                        <label class="teal-label">
+                            <input type="checkbox" class="item" value="Veg Manchuria" data-price="40">
+                            Veg Manchuria (₹40)
+                        </label>
+                        <input type="number" class="quantity" min="0">
+                    </li>
+                    <li>
+                        <label class="teal-label">
+                            <input type="checkbox" class="item" value="Single Egg Manchuria" data-price="50">
+                            Single Egg Manchuria (₹50)
+                        </label>
+                        <input type="number" class="quantity" min="0">
+                    </li>
+                    <li>
+                        <label class="teal-label">
+                            <input type="checkbox" class="item" value="Double Egg Manchuria" data-price="55">
+                            Double Egg Manchuria (₹55)
+                        </label>
+                        <input type="number" class="quantity" min="0">
+                    </li>
+                    <li>
+                        <label class="teal-label">
+                            <input type="checkbox" class="item" value="Chicken Manchuria" data-price="70">
+                            Chicken Manchuria (₹70)
                         </label>
                         <input type="number" class="quantity" min="0">
                     </li>
@@ -336,89 +419,110 @@
                 </ul>
             </div>
             <div class="menu-section">
-                <h2>Fresh Juices</h2>
+                <h2>Starters And Biryani</h2>
                 <ul>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Fresh Lime" data-price="20">
-                            Fresh Lime (₹20)
+                        <label class="purple-label">
+                            <input type="checkbox" class="item" value="Chilli Chicken" data-price="20">
+                            Chilli Chicken (₹20)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Mosambi" data-price="40">
-                            Mosambi (₹40)
+                        <label class="purple-label">
+                            <input type="checkbox" class="item" value="Chicken 65" data-price="40">
+                            Chicken 65 (₹40)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Orange" data-price="40">
-                            Orange (₹40)
+                        <label class="purple-label">
+                            <input type="checkbox" class="item" value="Lemon Chicken" data-price="40">
+                            Lemon Chicken (₹40)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pineapple" data-price="40">
-                            Pineapple (₹40)
+                        <label class="purple-label">
+                            <input type="checkbox" class="item" value="Chicken Lollipop" data-price="40">
+                            Chicken Lollipop (₹40)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Watermelon" data-price="40">
-                            Watermelon (₹40)
+                        <label class="purple-label">
+                            <input type="checkbox" class="item" value="Boiled Egg(2pcs)" data-price="25">
+                            Boiled Egg(2pcs) (₹25)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Mango" data-price="50">
-                            Mango (₹50)
+                        <label class="purple-label">
+                            <input type="checkbox" class="item" value="Half Egg Masala" data-price="35">
+                            Half Egg Masala (₹35)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pomagranate" data-price="60">
-                            Pomagranate (₹60)
+                        <label class="purple-label">
+                            <input type="checkbox" class="item" value="Full Egg Masala" data-price="70">
+                            Full Egg Masala (₹70)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Apple" data-price="60">
-                            Apple (₹60)
+                        <label class="purple-label">
+                            <input type="checkbox" class="item" value="Egg Bhurji" data-price="60">
+                            Egg Bhurji (₹60)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Muskmelon" data-price="40">
-                            Muskmelon (₹40)
+                        <label class="purple-label">
+                            <input type="checkbox" class="item" value="Single Omlet" data-price="15">
+                            Single Omlet (₹15)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Papaya" data-price="40">
-                            Papaya (₹40)
+                        <label class="purple-label">
+                            <input type="checkbox" class="item" value="Double Omlet" data-price="25">
+                            Double Omlet (₹25)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Chikku" data-price="40">
-                            Chikku (₹60)
+                        <label class="red-label">
+                            <input type="checkbox" class="item" value="Dum Biryani" data-price="120">
+                            Dum Biryani (₹120)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Mixed Fruit Juice" data-price="60">
-                            Mixed Fruit Juice (₹60)
+                        <label class="red-label">
+                            <input type="checkbox" class="item" value="Fried Piece Biryani" data-price="120">
+                            Fried Piece Biryani (₹120)
+                        </label>
+                        <input type="number" class="quantity"  min="0">
+                    </li>
+                    <li>
+                        <label class="red-label">
+                            <input type="checkbox" class="item" value="Chicken Lollipop Biryani" data-price="130">
+                            Chicken Lollipop Biryani (₹130)
+                        </label>
+                        <input type="number" class="quantity"  min="0">
+                    </li>
+                    <li>
+                        <label class="red-label">
+                            <input type="checkbox" class="item" value="Biryani Rice" data-price="80">
+                            Biryani Rice (₹80)
+                        </label>
+                        <input type="number" class="quantity"  min="0">
+                    </li>
+                    <li>
+                        <label class="red-label">
+                            <input type="checkbox" class="item" value="Egg Biryani" data-price="90">
+                            Egg Biryani (₹90)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
@@ -427,93 +531,78 @@
                 </ul>
             </div>
             <div class="menu-section">
-                <h2>Fresh Juices</h2>
+                <h2>Maggie And Fries</h2>
                 <ul>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Fresh Lime" data-price="20">
-                            Fresh Lime (₹20)
+                        <label class="green-label">
+                            <input type="checkbox" class="item" value="Masala Maggie" data-price="30">
+                            Masala Maggie (₹30)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Mosambi" data-price="40">
-                            Mosambi (₹40)
+                        <label class="green-label">
+                            <input type="checkbox" class="item" value="Veg Masala Maggie" data-price="40">
+                            Veg Masala Maggie (₹40)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Orange" data-price="40">
-                            Orange (₹40)
+                        <label class="green-label">
+                            <input type="checkbox" class="item" value="Egg Maggie" data-price="50">
+                            Egg Maggie (₹50)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pineapple" data-price="40">
-                            Pineapple (₹40)
+                        <label class="green-label">
+                            <input type="checkbox" class="item" value="Cheese Maggie" data-price="50">
+                            Cheese Maggie (₹50)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Watermelon" data-price="40">
-                            Watermelon (₹40)
+                        <label class="green-label">
+                            <input type="checkbox" class="item" value="Corn Maggie" data-price="50">
+                            Corn Maggie (₹50)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Mango" data-price="50">
-                            Mango (₹50)
+                        <label class="green-label">
+                            <input type="checkbox" class="item" value="Veg Nuggets" data-price="70">
+                            Veg Nuggets (₹70)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Pomagranate" data-price="60">
-                            Pomagranate (₹60)
+                        <label class="green-label">
+                            <input type="checkbox" class="item" value="Chicken Nuggets" data-price="80">
+                            Chicken Nuggets (₹80)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Apple" data-price="60">
-                            Apple (₹60)
+                        <label class="green-label">
+                            <input type="checkbox" class="item" value="French Fries" data-price="60">
+                            French Fries (₹60)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Muskmelon" data-price="40">
-                            Muskmelon (₹40)
+                        <label class="green-label">
+                            <input type="checkbox" class="item" value="Masala Fries" data-price="70">
+                            Masala Fries (₹70)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Papaya" data-price="40">
-                            Papaya (₹40)
+                        <label class="green-label">
+                            <input type="checkbox" class="item" value="Peri Peri Fries" data-price="80">
+                            Peri Peri Fries (₹80)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Chikku" data-price="40">
-                            Chikku (₹60)
-                        </label>
-                        <input type="number" class="quantity"  min="0">
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" class="item" value="Mixed Fruit Juice" data-price="60">
-                            Mixed Fruit Juice (₹60)
-                        </label>
-                        <input type="number" class="quantity"  min="0">
-                    </li>
-
                     <!-- Add more drink items here -->
                 </ul>
             </div>
