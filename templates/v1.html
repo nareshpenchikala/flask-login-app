@@ -882,7 +882,7 @@
                     listItem.textContent = `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}`;
                     document.getElementById('selectedItems').appendChild(listItem);
 
-                    billContent += `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}\n\n`;
+                    billContent += `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}\n\n\n`;
         
                     selectedItems.push({
                         name: itemName,
@@ -922,7 +922,7 @@
             });
         
             // Build and show the bill content for printing
-            format1 = '------------------------------';
+            format1 = '------------------------------------';
             format2 = 'Maruthi Garden\nSarjapur Road,Junnasandra SY No 07\nMahadevapura,\nB.B.M.P East\nKarnataka';
             format3 = 'Item            Qty  Price';
 
