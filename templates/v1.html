@@ -884,7 +884,7 @@
                     const formattedPrice = `₹${subtotal.toFixed(2)}`.padStart(priceWidth, ' ');
 
                     // Append the formatted strings to billContent
-                    billContent += `${formattedItem}${formattedQuantity}${formattedPrice}\n\n`;
+                    billContent += `${formattedItem}${formattedQuantity}${formattedPrice}\n`;
         
                     selectedItems.push({
                         name: itemName,
@@ -929,7 +929,7 @@
             format3 = 'Item                         Qty    Price';
             // Build and show the bill content for printing
             const fontSize = '35px'; // Adjust the font size as needed
-            const lineHeight = '3'; // Adjust the line height as needed
+            const lineHeight = '1.5'; // Adjust the line height as needed
 
             billContent = `<style>
                             pre {
