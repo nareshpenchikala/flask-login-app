@@ -563,8 +563,8 @@
                     </li>
                     <li>
                         <label class="red-label">
-                            <input type="checkbox" class="item" value="Hyderabad Chicken Dum Biryani" data-price="150">
-                            Hyderabad Chicken Dum Biryani (₹150)
+                            <input type="checkbox" class="item" value="Hyderabad Dum Biryani" data-price="150">
+                            Hyderabad Dum Biryani (₹150)
                         </label>
                         <input type="number" class="quantity"  min="0">
                     </li>
@@ -860,7 +860,7 @@
             // Define the formatting for the items, quantities, and prices
             const itemWidth = 20; // Adjust the width as needed
             const quantityWidth = 5; // Adjust the width as needed
-            const priceWidth = 10; // Adjust the width as needed
+            const priceWidth = 8; // Adjust the width as needed
         
             items.forEach((item, index) => {
                 if (item.checked) {
@@ -924,9 +924,9 @@
             });
         
             // Build and show the bill content for printing
-            format1 = '--------------------------------------------------------';
+            format1 = '----------------------------------------';
             format2 = 'Maruthi Gardens\nSarjapur Road,Junnasandra SY No 07\nMahadevapura,\nB.B.M.P East\nKarnataka';
-            format3 = 'Item                         Qty    Price';
+            format3 = 'Item                      Qty    Price';
             // Build and show the bill content for printing
             const fontSize = '35px'; // Adjust the font size as needed
             const lineHeight = '1.5'; // Adjust the line height as needed
@@ -945,7 +945,7 @@
             if (billContent !== '') {
                 const printWindow = window.open('', '_blank');
                 printWindow.document.open();
-                printWindow.document.write(`<pre>${billContent}\nTotal: ₹${total.toFixed(2)}</pre>`);
+                printWindow.document.write(`<pre>${billContent}\nTotal: ₹${total.toFixed(2)}<br><br></pre>`);
                 printWindow.document.close();
                 printWindow.print();
             }
