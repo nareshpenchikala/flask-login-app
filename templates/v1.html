@@ -857,6 +857,10 @@
         
             document.getElementById('selectedItems').innerHTML = '';
             document.getElementById('imageContainer').innerHTML = '';
+            // Define the formatting for the items, quantities, and prices
+            const itemWidth = 40; // Adjust the width as needed
+            const quantityWidth = 10; // Adjust the width as needed
+            const priceWidth = 20; // Adjust the width as needed
         
             items.forEach((item, index) => {
                 if (item.checked) {
@@ -874,11 +878,13 @@
                     total += subtotal;
         
                     const itemName = item.value;
-                    const listItem = document.createElement('li');
-                    listItem.textContent = `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}`;
-                    document.getElementById('selectedItems').appendChild(listItem);
-        
-                    billContent += `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}\n`;
+                    // Create formatted strings for item, quantity, and price
+                    const formattedItem = itemName.padEnd(itemWidth, ' ');
+                    const formattedQuantity = quantity.toString().padStart(quantityWidth, ' ');
+                    const formattedPrice = `₹${subtotal.toFixed(2)}`.padStart(priceWidth, ' ');
+
+                    // Append the formatted strings to billContent
+                    billContent += `${formattedItem}${formattedQuantity}${formattedPrice}\n\n`;
         
                     selectedItems.push({
                         name: itemName,
@@ -918,9 +924,9 @@
             });
         
             // Build and show the bill content for printing
-            format1 = '------------------------------';
-            format2 = 'Aaha Spice\nSarjapur Road,Junnasandra SY No 07\nMahadevapura,\nB.B.M.P East\nKarnataka';
-            format3 = 'Item            Qty  Price';
+            format1 = '-----------------------------------------------------------------------';
+            format2 = 'Maruthi Gardens\nSarjapur Road,Junnasandra SY No 07\nMahadevapura,\nB.B.M.P East\nKarnataka';
+            format3 = 'Item                                            Qty              Price';
         
             billContent = `Bill Number: ${localStorage.getItem('billNumber')}\n\n${currentDateTime}\n${format1}\n\n${format2}\n${format1}\n${format3}\n${format1}\n\n${billContent}`;
         
