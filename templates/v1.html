@@ -925,11 +925,11 @@
         
             // Build and show the bill content for printing
             format1 = '----------------------------------------';
-            format2 = 'Maruthi Gardens\nSarjapur Road,Junnasandra SY No 07\nMahadevapura,\nB.B.M.P East\nKarnataka';
+            format2 = 'Maruthi Gardens\nSarjapur Road,Junnasandra SY No 07';
             format3 = 'Item                 Qty    Price';
             // Build and show the bill content for printing
-            const fontSize = '45px'; // Adjust the font size as needed
-            const lineHeight = '2.5'; // Adjust the line height as needed
+            const fontSize = '40px'; // Adjust the font size as needed
+            const lineHeight = '2.0'; // Adjust the line height as needed
 
             billContent = `<style>
                             pre {
@@ -937,7 +937,7 @@
                                 line-height: ${lineHeight};
                             }
                         </style>
-                        Bill Number: ${localStorage.getItem('billNumber')}\n\n${currentDateTime}\n${format1}\n\n${format2}\n${format1}\n${format3}\n${format1}\n\n${billContent}`;
+                        Bill Number: ${localStorage.getItem('billNumber')}\n${currentDateTime}\n${format1}\n${format2}\n${format1}\n${format3}\n${format1}\n\n${billContent}`;
 
             // billContent = `Bill Number: ${localStorage.getItem('billNumber')}\n\n${currentDateTime}\n${format1}\n\n${format2}\n${format1}\n${format3}\n${format1}\n\n${billContent}`;
         
