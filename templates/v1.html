@@ -878,11 +878,13 @@
                     total += subtotal;
         
                     const itemName = item.value;
-                    const listItem = document.createElement('li');
-                    listItem.textContent = `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}`;
-                    document.getElementById('selectedItems').appendChild(listItem);
+                    // Create formatted strings for item, quantity, and price
+                    const formattedItem = itemName.padEnd(itemWidth, ' ');
+                    const formattedQuantity = quantity.toString().padStart(quantityWidth, ' ');
+                    const formattedPrice = `₹${subtotal.toFixed(2)}`.padStart(priceWidth, ' ');
 
-                    billContent += `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}\n\n\n`;
+                    // Append the formatted strings to billContent
+                    billContent += `${formattedItem}${formattedQuantity}${formattedPrice}\n\n`;
         
                     selectedItems.push({
                         name: itemName,
@@ -922,11 +924,22 @@
             });
         
             // Build and show the bill content for printing
-            format1 = '------------------------------------';
-            format2 = 'Maruthi Garden\nSarjapur Road,Junnasandra SY No 07\nMahadevapura,\nB.B.M.P East\nKarnataka';
-            format3 = 'Item            Qty  Price';
+            format1 = '--------------------------------------------------------';
+            format2 = 'Maruthi Gardens\nSarjapur Road,Junnasandra SY No 07\nMahadevapura,\nB.B.M.P East\nKarnataka';
+            format3 = 'Item                         Qty    Price';
+            // Build and show the bill content for printing
+            const fontSize = '35px'; // Adjust the font size as needed
+            const lineHeight = '3'; // Adjust the line height as needed
 
-            billContent = `Bill Number: ${localStorage.getItem('billNumber')}\n\n${currentDateTime}\n${format1}\n\n${format2}\n${format1}\n${format3}\n${format1}\n\n${billContent}`;
+            billContent = `<style>
+                            pre {
+                                font-size: ${fontSize};
+                                line-height: ${lineHeight};
+                            }
+                        </style>
+                        Bill Number: ${localStorage.getItem('billNumber')}\n\n${currentDateTime}\n${format1}\n\n${format2}\n${format1}\n${format3}\n${format1}\n\n${billContent}`;
+
+            // billContent = `Bill Number: ${localStorage.getItem('billNumber')}\n\n${currentDateTime}\n${format1}\n\n${format2}\n${format1}\n${format3}\n${format1}\n\n${billContent}`;
         
             // Show print dialog with bill content
             if (billContent !== '') {
