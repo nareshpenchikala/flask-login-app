@@ -858,9 +858,9 @@
             document.getElementById('selectedItems').innerHTML = '';
             document.getElementById('imageContainer').innerHTML = '';
             // Define the formatting for the items, quantities, and prices
-            const itemWidth = 40; // Adjust the width as needed
-            const quantityWidth = 10; // Adjust the width as needed
-            const priceWidth = 20; // Adjust the width as needed
+            const itemWidth = 20; // Adjust the width as needed
+            const quantityWidth = 5; // Adjust the width as needed
+            const priceWidth = 10; // Adjust the width as needed
         
             items.forEach((item, index) => {
                 if (item.checked) {
@@ -924,11 +924,22 @@
             });
         
             // Build and show the bill content for printing
-            format1 = '-----------------------------------------------------------------------';
+            format1 = '-----------------------------------------------';
             format2 = 'Maruthi Gardens\nSarjapur Road,Junnasandra SY No 07\nMahadevapura,\nB.B.M.P East\nKarnataka';
-            format3 = 'Item                                            Qty              Price';
-        
-            billContent = `Bill Number: ${localStorage.getItem('billNumber')}\n\n${currentDateTime}\n${format1}\n\n${format2}\n${format1}\n${format3}\n${format1}\n\n${billContent}`;
+            format3 = 'Item                         Qty    Price';
+            // Build and show the bill content for printing
+            const fontSize = '16px'; // Adjust the font size as needed
+            const lineHeight = '1.5'; // Adjust the line height as needed
+
+            billContent = `<style>
+                            pre {
+                                font-size: ${fontSize};
+                                line-height: ${lineHeight};
+                            }
+                        </style>
+                        Bill Number: ${localStorage.getItem('billNumber')}\n\n${currentDateTime}\n${format1}\n\n${format2}\n${format1}\n${format3}\n${format1}\n\n${billContent}`;
+
+            // billContent = `Bill Number: ${localStorage.getItem('billNumber')}\n\n${currentDateTime}\n${format1}\n\n${format2}\n${format1}\n${format3}\n${format1}\n\n${billContent}`;
         
             // Show print dialog with bill content
             if (billContent !== '') {
