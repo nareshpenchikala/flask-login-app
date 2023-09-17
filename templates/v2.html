@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
     <title>Restaurant Billing System</title>
     <style>
@@ -19,8 +20,7 @@
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            width: 80%;
-            max-width: 800px;
+            width: 90%;
             box-sizing: border-box;
             margin: 20px;
         }
@@ -36,14 +36,21 @@
         }
         
         #menu {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex; /* Display children side by side */
+            justify-content: space-between; /* Space out the items */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
         }
 
+        /* Adjust the width of each menu section */
         .menu-section {
-            flex-basis: 30%;
-            margin-bottom: 20px;
+            flex-basis: 30%; /* Each menu section takes up 30% of the available space */
+            margin-bottom: 30px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
         }
         
         #bill {
@@ -66,15 +73,17 @@
         }
         
         .item {
-            margin-right: 5px;
+            margin-right: 10px;
+            transform: scale(1.5);
         }
         
         .quantity {
-            width: 40px;
-            text-align: center;
+            width: 50px;
+            padding: 8px;
+            text-align: left;
         }
         
-        #selectedItems {
+        #itemDetails {
             margin-top: 20px;
         }
         
@@ -93,16 +102,48 @@
         button {
             display: block;
             margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 18px;
             background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            padding: 12px 24px; /* Larger padding for touch-friendly buttons */
+            font-size: 20px; /* Larger font size for buttons */
+            border-radius: 6px;
+        }
+        body {
+            background-image: url('static/img/bill-background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Style the container with a semi-transparent background */
+        #container {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            /* Rest of your existing styles for #container */
+        }
+
+        button.logout {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e74c3c;
             color: #fff;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.2s;
         }
-        
+
+        button.logout:hover {
+            background-color: #c0392b;
+        }
+
+        /* Style the buttons */
+        button {
+            /* Rest of your existing button styles */
+            background-color: #e74c3c; /* Change the button color */
+        }
+
         button:hover {
             background-color: #0056b3;
         }
@@ -110,160 +151,297 @@
 </head>
 <body>
     <div id="container">
-        <h1>Restaurant Billing System</h1>
-        <div id="container">
-            <div>
-                <label for="category">Select a Category:</label>
-                <select id="category" onchange="showCategoryMenu()">
-                    <option value="food">Food Items</option>
-                    <option value="drinks">Drinks</option>
-                    <option value="juices">Fresh Juices</option>
-                </select>
+        <h1>Billing System</h1>
+        <div id="menu">
+            <div class="menu-section">
+                <h2>Tea Menu</h2>
+                <ul>
+                    {% for item in menu_data["Tea menu"] %}
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="{{ item['Item'] }}" data-price="{{ item['Price'] }}">
+                            {{ item['Item'] }} (₹{{ item['Price'] }})
+                        </label>
+                        <input type="number" class="quantity" min="0">
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
-            <div id="menu">
+            <div class="menu-section">
+                <h2>Coffee and Milk</h2>
+                <ul>
+                    {% for item in menu_data["Coffee and Milk"] %}
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="{{ item['Item'] }}" data-price="{{ item['Price'] }}">
+                            {{ item['Item'] }} (₹{{ item['Price'] }})
+                        </label>
+                        <input type="number" class="quantity" min="0">
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
-        </div>
-  
-        <div id="bill">
-            <h2>Bill</h2>
-            <ul id="selectedItems"></ul>
-            <p>Total: ₹<span id="totalAmount">0.00</span></p>
-            <div id="imageContainer"></div>
-            <button onclick="calculateTotal()">Calculate Total</button>
-            <button onclick="printBill()">Print Bill</button>  
-        </div>
-        <button onclick="refreshPage()">Back</button>
+            <div class="menu-section">
+                <h2>Maggie and Fries</h2>
+                <ul>
+                    {% for item in menu_data["Maggie and Fries"] %}
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="{{ item['Item'] }}" data-price="{{ item['Price'] }}">
+                            {{ item['Item'] }} (₹{{ item['Price'] }})
+                        </label>
+                        <input type="number" class="quantity" min="0">
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="menu-section">
+                <h2>Fast Food</h2>
+                <ul>
+                    {% for item in menu_data["Fast Food"] %}
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="{{ item['Item'] }}" data-price="{{ item['Price'] }}">
+                            {{ item['Item'] }} (₹{{ item['Price'] }})
+                        </label>
+                        <input type="number" class="quantity" min="0">
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="menu-section">
+                <h2>Starters and Biryani</h2>
+                <ul>
+                    {% for item in menu_data["Starters and Biryani"] %}
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="{{ item['Item'] }}" data-price="{{ item['Price'] }}">
+                            {{ item['Item'] }} (₹{{ item['Price'] }})
+                        </label>
+                        <input type="number" class="quantity" min="0">
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="menu-section">
+                <h2>Fresh Juices</h2>
+                <ul>
+                    {% for item in menu_data["Fresh Juices"] %}
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="{{ item['Item'] }}" data-price="{{ item['Price'] }}">
+                            {{ item['Item'] }} (₹{{ item['Price'] }})
+                        </label>
+                        <input type="number" class="quantity" min="0">
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="menu-section">
+                <h2>Today's Special</h2>
+                <ul>
+                    {% for item in menu_data["Today's Special"] %}
+                    <li>
+                        <label>
+                            <input type="checkbox" class="item" value="{{ item['Item'] }}" data-price="{{ item['Price'] }}">
+                            {{ item['Item'] }} (₹{{ item['Price'] }})
+                        </label>
+                        <input type="number" class="quantity" min="0">
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
 
+                <!-- Add more drink items here -->
+        <!-- Add more drink items here -->
+
+                <script>
+
+                    const plusTenCheckboxes = document.querySelectorAll('.plusTen');
+                    plusTenCheckboxes.forEach((checkbox, index) => {
+                        checkbox.addEventListener('change', () => {
+                            if (checkbox.checked) {
+                                const increaseAmount = parseInt(checkbox.getAttribute('data-increase'));
+                                const currentQuantity = parseInt(quantityInputs[index].value);
+                                quantityInputs[index].value = currentQuantity + increaseAmount;
+
+                                // Trigger a change event to update the subtotal and total
+                                const changeEvent = new Event('change');
+                                quantityInputs[index].dispatchEvent(changeEvent);
+                            }
+                        });
+                    });
+
+                    // Get all the checkboxes and number inputs
+                    const checkboxes = document.querySelectorAll('.item');
+                    const quantityInputs = document.querySelectorAll('.quantity');
+
+                    // Add event listener to checkboxes
+                    checkboxes.forEach((checkbox, index) => {
+                        checkbox.addEventListener('change', () => {
+                            // Maintain focus on the corresponding number input
+                            quantityInputs[index].focus();
+                            // Move cursor to the right of the input value
+                            const inputValue = quantityInputs[index].value;
+                            quantityInputs[index].setSelectionRange(inputValue.length, inputValue.length);
+                        });
+                    });
+                </script>
+            </div>
+            <div id="bill">
+                <h2>Bill</h2>
+                <div id="itemDetails"></div>
+                <p>Total: ₹<span id="totalAmount">0.00</span></p>
+                <div id="imageContainer"></div>
+                <button onclick="calculateTotal()">Calculate Total</button>
+                <button onclick="printBill()">Print Bill</button>  
+            </div>
+            <button onclick="refreshPage()">Back</button>
+            <button class="logout" onclick="logout()">Logout</button>
+        </div>
     </div>
     <script>
-        // JavaScript code here...
         function calculateTotal() {
             const items = document.querySelectorAll('.item');
             const quantities = document.querySelectorAll('.quantity');
             let total = 0;
-
-            document.getElementById('selectedItems').innerHTML = '';
-            document.getElementById('imageContainer').innerHTML = '';
-
+            let billContent = '';
+            let hasSelectedItems = false; // Flag to check if any item is selected
+        
+            document.getElementById('itemDetails').innerHTML = ''; // Clear previous item details
+        
             items.forEach((item, index) => {
                 if (item.checked) {
                     const price = parseFloat(item.getAttribute('data-price'));
                     const quantity = parseInt(quantities[index].value);
+        
+                    if (!isNaN(quantity) && quantity >= 0) {
+                        const subtotal = price * quantity;
+                        total += subtotal;
+        
+                        const itemName = item.value;
+                        const listItem = document.createElement('div');
+                        listItem.textContent = `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}`;
+                        document.getElementById('itemDetails').appendChild(listItem);
+        
+                        billContent += `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}\n`;
+                        hasSelectedItems = true;
+                    }
+                }
+            });
+        
+            if (!hasSelectedItems) {
+                alert('Please select at least one item.');
+                return; // Do not proceed without selected items
+            }
+        
+            document.getElementById('totalAmount').textContent = `Total: ₹${total.toFixed(2)}`;
+        }
+
+        function printBill() {
+            const items = document.querySelectorAll('.item');
+            const quantities = document.querySelectorAll('.quantity');
+            let total = 0;
+            let billContent = '';
+            let itemDetails = [];
+            const currentDateTime = getCurrentDateTime();
+            const currentDate = new Date().toLocaleDateString('en-US');
+            const weekday = getWeekday();
+            const Time = getCurrentTime();
+        
+            let hasMissingQuantity = false; // Flag to track if any quantity is missing
+        
+            document.getElementById('itemDetails').innerHTML = '';
+            document.getElementById('imageContainer').innerHTML = '';
+        
+            items.forEach((item, index) => {
+                if (item.checked) {
+                    const price = parseFloat(item.getAttribute('data-price'));
+                    const quantity = parseInt(quantities[index].value);
+        
+                    if (isNaN(quantity) || quantity < 0) {
+                        hasMissingQuantity = true;
+                        alert('Please enter a valid quantity for selected items.');
+                        return; // Exit the loop
+                    }
+        
                     const subtotal = price * quantity;
-
+        
                     total += subtotal;
-
+        
                     const itemName = item.value;
                     const listItem = document.createElement('li');
                     listItem.textContent = `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}`;
-                    document.getElementById('selectedItems').appendChild(listItem);
+                    document.getElementById('itemDetails').appendChild(listItem);
+        
+                    billContent += `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}\n`;
+        
+                    itemDetails.push({
+                        name: itemName,
+                        quantity,
+                        subtotal
+                    });
                 }
             });
-
+        
+            if (hasMissingQuantity) {
+                return; // Do not proceed with printing if quantities are missing
+            }
+        
             document.getElementById('totalAmount').textContent = total.toFixed(2);
+            const post_total = document.getElementById('totalAmount').textContent = total.toFixed(2);
+        
+            // Fetch and print the bill content
+            fetch('/print_bill', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    billno: localStorage.getItem('billNumber'),
+                    date: currentDate,
+                    time: Time,
+                    dayOfWeek: weekday,
+                    items: itemDetails,
+                    total: post_total
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        
+            // Build and show the bill content for printing
+            format1 = '----------------------------------------';
+            format2 = 'Maruthi Gardens\nSarjapur Road,Junnasandra SY No 07';
+            format3 = 'Item                 Qty    Price';
+            // Build and show the bill content for printing
+            const fontSize = '40px'; // Adjust the font size as needed
+            const lineHeight = '2.0'; // Adjust the line height as needed
 
-            // Display the image when total is calculated
-            if (total > 0) {
-                const image = document.createElement('img');
-                image.src = '/static/receipt.png';  // Path to the image in the static folder
-                image.alt = 'Receipt Image';
-                document.getElementById('imageContainer').appendChild(image);
+            billContent = `<style>
+                            pre {
+                                font-size: ${fontSize};
+                                line-height: ${lineHeight};
+                            }
+                        </style>
+                        Bill Number: ${localStorage.getItem('billNumber')}\n${currentDateTime}\n${format2}\n${format1}\n${format3}\n${format1}\n${billContent}`;
+
+            // billContent = `Bill Number: ${localStorage.getItem('billNumber')}\n\n${currentDateTime}\n${format1}\n\n${format2}\n${format1}\n${format3}\n${format1}\n\n${billContent}`;
+        
+            // Show print dialog with bill content
+            if (billContent !== '') {
+                const printWindow = window.open('', '_blank');
+                printWindow.document.open();
+                printWindow.document.write(`<pre>${billContent}\nTotal: ₹${total.toFixed(2)}<br><br></pre>`);
+                printWindow.document.close();
+                printWindow.print();
             }
         }
         
-    function printBill() {
-        resetBillNumber(); // Call the function to reset the bill number
-        const items = document.querySelectorAll('.item');
-        const quantities = document.querySelectorAll('.quantity');
-        let total = 0;
-        let billContent = '';
-        let selectedItems = [];
-        const currentDateTime = getCurrentDateTime();
-        // Get the weekday using the new function
-        const weekday = getWeekday();
-        const Time = getCurrentTime()
-        // Get the bill number and increment the counter
-        let billNumber = localStorage.getItem('billNumber');
-        if (!billNumber) {
-            billNumber = 1;
-        } else {
-            billNumber = parseInt(billNumber) + 1;
-        }
-        localStorage.setItem('billNumber', billNumber);
-
-        document.getElementById('selectedItems').innerHTML = '';
-        document.getElementById('imageContainer').innerHTML = '';
-
-        items.forEach((item, index) => {
-            if (item.checked) {
-                const price = parseFloat(item.getAttribute('data-price'));
-                const quantity = parseInt(quantities[index].value);
-                const subtotal = price * quantity;
-
-                total += subtotal;
-
-                const itemName = item.value;
-                const listItem = document.createElement('li');
-                listItem.textContent = `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}`;
-                document.getElementById('selectedItems').appendChild(listItem);
-
-                billContent += `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}\n`;
-            }
-        });
-
-        document.getElementById('totalAmount').textContent = total.toFixed(2);
-
-        items.forEach((item, index) => {
-            if (item.checked) {
-                const price = parseFloat(item.getAttribute('data-price'));
-                const quantity = parseInt(quantities[index].value);
-                const subtotal = price * quantity;
-
-                total += subtotal;
-
-                selectedItems.push({
-                    name: item.value,
-                    quantity,
-                    subtotal
-                });
-            }
-        });
-
-        fetch('/print_bill', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                billno: billNumber,
-                date: currentDateTime,
-                time: Time,
-                dayOfWeek: weekday,
-                items: selectedItems,
-                total
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert(data.message);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    
-        // Add current date and time, and bill number to the bill content
-        billContent = `Bill Number: ${billNumber}\n${currentDateTime}\n\n\n${billContent}`;
-
-        // Show print dialog with bill content
-        if (billContent !== '') {
-            const printWindow = window.open('', '_blank');
-            printWindow.document.open();
-            printWindow.document.write(`<pre>${billContent}\nTotal: ₹${total.toFixed(2)}</pre>`);
-            printWindow.document.close();
-            printWindow.print();
-        }
-    }
-
 // Function to get current date and time in IST with AM/PM format
 function getCurrentDateTime() {
     const options = {
@@ -324,96 +502,11 @@ function refreshPage() {
     location.reload();
 }
 
-let selectedItems = [];
-let category = 'food';
-function calculateTotal() {
-    let total = 0;
-    let billContent = '';
-
-    document.getElementById('selectedItems').innerHTML = '';
-    document.getElementById('imageContainer').innerHTML = '';
-
-    const quantityInputs = document.querySelectorAll('.quantity[data-item]');
-
-    quantityInputs.forEach(quantityInput => {
-        const itemName = quantityInput.getAttribute('data-item');
-        const item = menuItems[category].find(item => item.name === itemName);
-        const price = item.price;
-        const quantity = parseInt(quantityInput.value);
-        const subtotal = price * quantity;
-
-        total += subtotal;
-
-        const listItem = document.createElement('li');
-        listItem.textContent = `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}`;
-        document.getElementById('selectedItems').appendChild(listItem);
-
-        billContent += `${itemName} x ${quantity} - ₹${subtotal.toFixed(2)}\n`;
-    });
-
-    document.getElementById('totalAmount').textContent = total.toFixed(2);
-
-    // Display the image when total is calculated
-    if (total > 0) {
-        const image = document.createElement('img');
-        image.src = '/static/receipt.png';  // Path to the image in the static folder
-        image.alt = 'Receipt Image';
-        document.getElementById('imageContainer').appendChild(image);
-    }
+function logout() {
+    // Redirect to the login page
+    window.location.href = "/logout"; // Replace with the actual login page URL
 }
 
-
-
-function showCategoryMenu() {
-    const category = document.getElementById('category').value;
-    const menu = menuItems[category];
-
-    const menuContainer = document.getElementById('menu');
-    menuContainer.innerHTML = '';
-
-    menu.forEach(item => {
-        const itemElement = document.createElement('li');
-        const label = document.createElement('label');
-        label.innerHTML = `
-            <input type="checkbox" class="item" value="${item.name}" data-price="${item.price}">
-            ${item.name} (₹${item.price.toFixed(2)})
-        `;
-        const quantityInput = document.createElement('input');
-        quantityInput.type = 'number';
-        quantityInput.className = 'quantity';
-        quantityInput.value = '0';
-        quantityInput.min = '0';
-        quantityInput.setAttribute('data-item', item.name);
-
-        itemElement.appendChild(label);
-        itemElement.appendChild(quantityInput);
-        menuContainer.appendChild(itemElement);
-    });
-
-    // Clear selected items above the bill section and selectedItems array
-    selectedItems = [];
-    document.getElementById('selectedItems').innerHTML = '';
-    document.getElementById('totalAmount').textContent = '0.00';
-    document.getElementById('imageContainer').innerHTML = '';
-}
-
-const menuItems = {
-    food: [
-        { name: 'Burger', price: 10.99 },
-        { name: 'Pizza1', price: 12.99 },
-        { name: 'Pizza2', price: 12.99 }
-    ],
-    drinks: [
-        { name: 'Drink1', price: 5.99 },
-        { name: 'Drink2', price: 3.99 },
-        { name: 'Drink3', price: 2.99 }
-    ],
-    juices: [
-        { name: 'Juice1', price: 7.99 },
-        { name: 'Juice2', price: 6.99 },
-        { name: 'Juice3', price: 8.99 }
-    ]
-};
 
     </script>
 </body>

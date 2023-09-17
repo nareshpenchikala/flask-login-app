@@ -33,3 +33,87 @@ Date,bill Number,Time,weekday,Item Name,Quantity,Cost
 8/29/2023,3,9:59:05 PM,Tuesday,Mixed Fruit Juice,2,120
 8/29/2023,3,10:42:39 PM,Tuesday,Coke,3,5.97
 8/29/2023,3,10:42:39 PM,Tuesday,Mixed Fruit Juice,2,120
+9/17/2023,3,11:55:52 AM,Sunday,Tea,1,10
+9/17/2023,3,11:55:52 AM,Sunday,Elachi Tea,1,12
+9/17/2023,3,11:55:52 AM,Sunday,Masala Tea,1,15
+9/17/2023,3,11:55:52 AM,Sunday,Ginger Tea,1,15
+9/17/2023,3,11:55:52 AM,Sunday,Lemon Tea,1,20
+9/17/2023,3,11:55:52 AM,Sunday,Ginger Lemon Tea,1,20
+9/17/2023,3,11:55:52 AM,Sunday,Green Tea,1,20
+9/17/2023,3,11:55:52 AM,Sunday,Badam Tea,1,20
+9/17/2023,3,11:55:52 AM,Sunday,Pista Tea,1,20
+9/17/2023,3,11:55:52 AM,Sunday,Coffe,1,15
+9/17/2023,3,11:55:52 AM,Sunday,Instant Coffee,1,15
+9/17/2023,3,11:55:52 AM,Sunday,Black Coffee,1,15
+9/17/2023,3,11:55:52 AM,Sunday,Filter Coffee,1,20
+9/17/2023,3,11:55:52 AM,Sunday,Milk,1,10
+9/17/2023,3,11:55:52 AM,Sunday,Horlicks,1,15
+9/17/2023,3,11:55:52 AM,Sunday,Boost,1,15
+9/17/2023,3,11:55:52 AM,Sunday,Masala Maggie,1,30
+9/17/2023,3,11:55:52 AM,Sunday,Veg Masala Maggie,1,40
+9/17/2023,3,11:55:52 AM,Sunday,Egg Maggie,1,50
+9/17/2023,3,11:55:52 AM,Sunday,Cheese Maggie,1,50
+9/17/2023,3,11:55:52 AM,Sunday,Corn Maggie,1,50
+9/17/2023,3,11:55:52 AM,Sunday,Veg Nuggets,1,70
+9/17/2023,3,11:55:52 AM,Sunday,Chicken Nuggets,1,80
+9/17/2023,3,11:55:52 AM,Sunday,French Fries,1,60
+9/17/2023,3,11:55:52 AM,Sunday,Masala Fries,1,70
+9/17/2023,3,11:55:52 AM,Sunday,Peri Peri Fries,1,80
+9/17/2023,3,11:55:52 AM,Sunday,Veg Fried Rice,1,50
+9/17/2023,3,11:55:52 AM,Sunday,Gobi Fried Rice,1,60
+9/17/2023,3,11:55:52 AM,Sunday,Manchurian Fried Rice,1,60
+9/17/2023,3,11:55:52 AM,Sunday,Egg Manchurian Fried Rice,1,80
+9/17/2023,3,11:55:52 AM,Sunday,Egg Fried Rice,1,65
+9/17/2023,3,11:55:52 AM,Sunday,Double Egg Fried Rice,1,70
+9/17/2023,3,11:55:52 AM,Sunday,Chicken Fried Rice,1,100
+9/17/2023,3,11:55:52 AM,Sunday,Paneer Fried Rice,1,90
+9/17/2023,3,11:55:52 AM,Sunday,Schezwan Chicken Fried Rice,1,100
+9/17/2023,3,11:55:52 AM,Sunday,Schezwan Egg Fried Rice,1,80
+9/17/2023,3,11:55:52 AM,Sunday,Schezwan Veg Fried Rice,1,70
+9/17/2023,3,11:55:52 AM,Sunday,Veg Noodles,1,60
+9/17/2023,3,11:55:52 AM,Sunday,Egg Noodles,1,65
+9/17/2023,3,11:55:52 AM,Sunday,Double Egg Noodles,1,70
+9/17/2023,3,11:55:52 AM,Sunday,Chicken D.egg Noodles,1,100
+9/17/2023,3,11:55:52 AM,Sunday,Manchurian Noodles,1,60
+9/17/2023,3,11:55:52 AM,Sunday,Veg Manchuria,1,50
+9/17/2023,3,11:55:52 AM,Sunday,Paneer Manchuria,1,90
+9/17/2023,3,11:55:52 AM,Sunday,Egg Manchuria,1,70
+9/17/2023,3,11:55:52 AM,Sunday,Chicken Manchuria,1,100
+9/17/2023,3,11:55:52 AM,Sunday,Gobi Manchuria,1,70
+9/17/2023,3,11:55:52 AM,Sunday,Gobi Noodles,1,70
+9/17/2023,3,11:55:52 AM,Sunday,Chilli Chicken,1,150
+9/17/2023,3,11:55:52 AM,Sunday,Chicken 65,1,150
+9/17/2023,3,11:55:52 AM,Sunday,Lemon Chicken,1,150
+9/17/2023,3,11:55:52 AM,Sunday,Chicken Lollipop,1,150
+9/17/2023,3,11:55:52 AM,Sunday,Boiled Egg(2pcs),1,25
+9/17/2023,3,11:55:52 AM,Sunday,Egg Masala,1,70
+9/17/2023,3,11:55:52 AM,Sunday,Half Egg Masala,1,35
+9/17/2023,3,11:55:52 AM,Sunday,Egg Bhurji,1,60
+9/17/2023,3,11:55:52 AM,Sunday,Omlet,1,15
+9/17/2023,3,11:55:52 AM,Sunday,Double omlet,1,25
+9/17/2023,3,11:55:52 AM,Sunday,Hyderabad Dum Biryani,1,150
+9/17/2023,3,11:55:52 AM,Sunday,Fried Piece Biryani,1,150
+9/17/2023,3,11:55:52 AM,Sunday,Lollipop Biryani(1pc),1,160
+9/17/2023,3,11:55:52 AM,Sunday,Biryani Rice,1,80
+9/17/2023,3,11:55:52 AM,Sunday,Egg Biryani,1,90
+9/17/2023,3,11:55:52 AM,Sunday,Fresh Lime,1,20
+9/17/2023,3,11:55:52 AM,Sunday,Mosambi,1,40
+9/17/2023,3,11:55:52 AM,Sunday,Orange,1,40
+9/17/2023,3,11:55:52 AM,Sunday,Pineapple,1,40
+9/17/2023,3,11:55:52 AM,Sunday,Watermelon,1,40
+9/17/2023,3,11:55:52 AM,Sunday,Mango,1,50
+9/17/2023,3,11:55:52 AM,Sunday,Pomagranate,1,60
+9/17/2023,3,11:55:52 AM,Sunday,Apple,1,60
+9/17/2023,3,11:55:52 AM,Sunday,Muskmelon,1,40
+9/17/2023,3,11:55:52 AM,Sunday,Papaya,1,40
+9/17/2023,3,11:55:52 AM,Sunday,Chikku,1,60
+9/17/2023,3,11:55:52 AM,Sunday,Mixed Fruit Juice,1,60
+9/17/2023,3,12:03:12 PM,Sunday,Pulav curry,1,80
+9/17/2023,3,12:03:49 PM,Sunday,Gobi Noodles,1,70
+9/17/2023,3,12:03:49 PM,Sunday,Pulav curry,1,80
+9/17/2023,3,12:05:26 PM,Sunday,Gobi Manchuria,1,70
+9/17/2023,3,12:05:26 PM,Sunday,Gobi Noodles,1,70
+9/17/2023,3,12:05:26 PM,Sunday,Pulav curry,1,80
+9/17/2023,3,12:05:46 PM,Sunday,Gobi Manchuria,1,70
+9/17/2023,3,12:05:46 PM,Sunday,Gobi Noodles,1,70
+9/17/2023,3,12:05:46 PM,Sunday,Pulav curry,1,80
