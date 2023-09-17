@@ -82,6 +82,11 @@
             padding: 8px;
             text-align: left;
         }
+        .Itemname {
+            width: 150px;
+            padding: 8px;
+            text-align: left;
+        }
         
         #itemDetails {
             margin-top: 20px;
@@ -302,15 +307,15 @@
             <div id="addNewItem">
                 <h2>Add New Item to Today's Special</h2>
                 <label for="newItemName">Item Name:</label>
-                <input class="itemDetails" type="text" id="newItemName">
+                <input class="Itemname" type="text" id="newItemName">
                 <label for="newItemPrice">Item Price (₹):</label>
-                <input type="number" id="newItemPrice" min="0">
+                <input type="number" class="quantity" id="newItemPrice" min="0">
                 <button onclick="addNewItem()">Add Item</button>
             </div>
             <br>
             <div id="clearItems">
                 <h2>Clear Items and Prices</h2>
-                <button onclick="clearItems()">Clear All</button>
+                <button onclick="clearItems()">Clear Today's Special Menu</button>
             </div>
         </div>
     </div>
