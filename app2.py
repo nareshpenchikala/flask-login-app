@@ -113,8 +113,41 @@ def print_bill():
 
     return jsonify({'message': 'Bill data added to CSV'})
 
+@app.route('/add-new-item', methods=['POST'])
+def add_new_item():
+    data = request.get_json()
+    newItemName = data['newItemName']
+    newItemPrice = data['newItemPrice']
 
+    csv_filename = "today's_special.csv"
 
+    try:
+        # Append the new item to the CSV file
+        with open(csv_filename, mode='a', newline='') as file:
+            fieldnames = ['Item', 'Price']
+            csv_writer = csv.DictWriter(file, fieldnames=fieldnames)
+
+            # Write the new item data
+            csv_writer.writerow({'Item': newItemName, 'Price': newItemPrice})
+
+        return jsonify({'message': 'New item added successfully'}), 200
+    except Exception as e:
+        return jsonify({'message': f'Error: {str(e)}'}), 500
+    
+@app.route('/clear-items', methods=['POST'])
+def clear_items():
+    csv_filename = "today's_special.csv"
+
+    try:
+        # Clear the CSV file by opening it in write mode
+        with open(csv_filename, mode='w', newline='') as file:
+            fieldnames = ['Item', 'Price']
+            csv_writer = csv.DictWriter(file, fieldnames=fieldnames)
+            csv_writer.writeheader()
+
+        return jsonify({'message': 'All items and prices cleared successfully'}), 200
+    except Exception as e:
+        return jsonify({'message': f'Error: {str(e)}'}), 500
 
 @app.route('/raw_material_purchase')
 def raw_material_purchase():

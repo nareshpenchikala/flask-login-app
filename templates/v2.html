@@ -298,6 +298,20 @@
             </div>
             <button onclick="refreshPage()">Back</button>
             <button class="logout" onclick="logout()">Logout</button>
+            <br>
+            <div id="addNewItem">
+                <h2>Add New Item to Today's Special</h2>
+                <label for="newItemName">Item Name:</label>
+                <input class="itemDetails" type="text" id="newItemName">
+                <label for="newItemPrice">Item Price (₹):</label>
+                <input type="number" id="newItemPrice" min="0">
+                <button onclick="addNewItem()">Add Item</button>
+            </div>
+            <br>
+            <div id="clearItems">
+                <h2>Clear Items and Prices</h2>
+                <button onclick="clearItems()">Clear All</button>
+            </div>
         </div>
     </div>
     <script>
@@ -441,6 +455,58 @@
                 printWindow.print();
             }
         }
+
+        function addNewItem() {
+            const newItemName = document.getElementById("newItemName").value;
+            const newItemPrice = document.getElementById("newItemPrice").value;
+        
+            if (!newItemName || isNaN(newItemPrice)) {
+                alert("Please enter a valid item name and price.");
+                return;
+            }
+        
+            // Send an AJAX request to your Flask server to add the new item
+            fetch('/add-new-item', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ newItemName, newItemPrice })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("New item added successfully!");
+                    location.reload(); // Reload the page to reflect the changes
+                } else {
+                    alert("Failed to add the new item.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred while adding the new item.");
+            });
+        }
+
+        function clearItems() {
+            // Send an AJAX request to your Flask server to clear the CSV file
+            fetch('/clear-items', {
+                method: 'POST'
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("All items and prices cleared successfully!");
+                    location.reload(); // Reload the page to reflect the changes
+                } else {
+                    alert("Failed to clear items and prices.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred while clearing items and prices.");
+            });
+        }
+        
+        
         
 // Function to get current date and time in IST with AM/PM format
 function getCurrentDateTime() {
